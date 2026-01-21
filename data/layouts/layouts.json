@@ -1204,7 +1204,7 @@
     {
       "id": "LAYOUT_SSANNE_EXTERIOR",
       "name": "SSAnne_Exterior_Layout",
-      "width": 70,
+      "width": 84,
       "height": 32,
       "border_width": 2,
       "border_height": 2,
@@ -4456,12 +4456,12 @@
     {
       "id": "LAYOUT_CHERRYGROVECITY",
       "name": "CherrygroveCity_Layout",
-      "width": 60,
-      "height": 80,
+      "width": 72,
+      "height": 28,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_ViridianCity",
+      "secondary_tileset": "gTileset_VermilionCity",
       "border_filepath": "data/layouts/CherrygroveCity/border.bin",
       "blockdata_filepath": "data/layouts/CherrygroveCity/map.bin"
     },
