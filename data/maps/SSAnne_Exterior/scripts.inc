@@ -63,3 +63,22 @@ SSAnne_Exterior_Movement_WalkDown::
 	walk_down
 	walk_down
 	step_end
+
+SSAnne_Exterior_EventScript_FerrySailor::
+        lock
+        faceplayer
+        msgbox SSAnne_Exterior_Text_FerryPrompt, MSGBOX_YESNO
+        compare VAR_RESULT, YES
+        goto_if_eq SSAnne_Exterior_EventScript_FerryDepart
+        release
+        end
+
+SSAnne_Exterior_EventScript_FerryDepart::
+        fadescreen FADE_TO_BLACK
+        warp MAP_CHERRYGROVE_CITY, 20, 19
+        fadescreen FADE_FROM_BLACK
+        release
+        end
+
+SSAnne_Exterior_Text_FerryPrompt:
+        .string "The ferry to Cherrygrove is boarding.\nWould you like to depart?$"
