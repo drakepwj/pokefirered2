@@ -1,7 +1,7 @@
 include config.mk
 
 # Default make rule
-all: rom
+.DEFAULT_GOAL := rom
 
 # Toolchain selection
 TOOLCHAIN := $(DEVKITARM)

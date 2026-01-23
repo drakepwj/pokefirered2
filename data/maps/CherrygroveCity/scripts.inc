@@ -1,5 +1,9 @@
 CherrygroveCity_MapScripts::
-	.byte 0
+    map_script MAP_SCRIPT_ON_LOAD, CherrygroveCity_Dummy
+    .byte 0
+
+CherrygroveCity_Dummy:
+    end
 
 CherrygroveCity_EventScript_FerrySailor::
         lock
@@ -12,7 +16,7 @@ CherrygroveCity_EventScript_FerrySailor::
 
 CherrygroveCity_EventScript_FerryDepart::
         fadescreen FADE_TO_BLACK
-        warp MAP_SS_ANNE_EXTERIOR, 73, 11
+        warp MAP_SSANNE_EXTERIOR, 73, 11
         fadescreen FADE_FROM_BLACK
         release
         end

@@ -1,0 +1,4 @@
+tools/preproc/preproc data/event_scripts.s charmap.txt | cc -E -I include - | tools/preproc/preproc -ie data/event_scripts.s charmap.txt | arm-none-eabi-as -mcpu=arm7tdmi --defsym FIRERED=1 --defsym REVISION=0 --defsym ENGLISH=1 --defsym MODERN=0 -o build/firered/data/event_scripts.o
+Failed to open "data/maps/Goldenrod_Mart/scripts.inc" for reading.
+make: *** [Makefile:339: build/firered/data/event_scripts.o] Error 1
+make: *** Deleting file 'build/firered/data/event_scripts.o'

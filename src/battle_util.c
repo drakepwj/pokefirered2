@@ -710,9 +710,17 @@ u8 DoFieldEndTurnEffects(void)
             gBattleStruct->turnCountersTracker++;
             break;
         case ENDTURN_FIELD_COUNT:
+      // Fog accuracy message (Fog or Blizzard)
+            if (gBattleStruct->blizzardFogActive)
+            {
+               BattleScriptPushCursor();
+               gBattlescriptCurrInstr = BattleScript_FogAccuracyMessage;
+               BattleScriptExecute(gBattlescriptCurrInstr);
+            }
+
             effect++;
             break;
-        }
+            }
     } while (effect == 0);
     return (gBattleMainFunc != BattleTurnPassed);
 }

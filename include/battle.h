@@ -433,6 +433,10 @@ struct BattleStruct
     u8 multiplayerId;
     u8 overworldWeatherDone;
     u8 atkCancellerTracker;
+
+    // blizzard
+     bool8 blizzardFogActive;
+
     u16 usedHeldItems[MAX_BATTLERS_COUNT];
     u8 chosenItem[4]; // why is this an u8?
     u8 AI_itemType[2];

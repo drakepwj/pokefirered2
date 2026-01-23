@@ -4,21 +4,28 @@
 #define WEATHER_NONE               0
 #define WEATHER_SUNNY_CLOUDS       1   // unused
 #define WEATHER_SUNNY              2
-#define WEATHER_RAIN               3   // unused
+#define WEATHER_RAIN               3   // unused in vanilla, used
 #define WEATHER_SNOW               4   // unused
 #define WEATHER_RAIN_THUNDERSTORM  5   // unused
 #define WEATHER_FOG_HORIZONTAL     6
 #define WEATHER_VOLCANIC_ASH       7   // unused
-#define WEATHER_SANDSTORM          8   // unused
+#define WEATHER_SANDSTORM          8   // unused  in vanilla, used
 #define WEATHER_FOG_DIAGONAL       9   // unused
 #define WEATHER_UNDERWATER         10  // unused
 #define WEATHER_SHADE              11
 #define WEATHER_DROUGHT            12  // unused and broken in overworld
-#define WEATHER_DOWNPOUR           13  // unused
+#define WEATHER_DOWNPOUR           13  // unused in vanilla, used
 #define WEATHER_UNDERWATER_BUBBLES 14  // unused
 #define WEATHER_ABNORMAL           15  // unused
 #define WEATHER_ROUTE119_CYCLE     20  // unused
 #define WEATHER_ROUTE123_CYCLE     21  // unused
+#define WEATHER_BLIZZARD           22  // Hail+fog
+#define WEATHER_CLEAR              23  // custom
+#define WEATHER_HAIL               24  // custom
+#define WEATHER_EXTREME_SUN        25  // custom
+#define WEATHER_OVERCAST           26  // custom
+#define WEATHER_HEAVY_RAIN         27  // custom
+#define WEATHER_FOG                28  // custom
 
 // These are used in maps' coord_weather_event entries.
 // They are not a one-to-one mapping with the engine's

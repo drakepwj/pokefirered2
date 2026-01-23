@@ -1,2 +1,2 @@
-Cherrygrove_House1_MapScripts::
+Route34_DayCare_MapScripts::
     .byte 0

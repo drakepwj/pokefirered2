@@ -1,2 +1,2 @@
-Cherrygrove_House1_MapScripts::
+Route46_House_MapScripts::
     .byte 0

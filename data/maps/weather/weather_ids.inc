@@ -1,0 +1,266 @@
+; ============================================================
+; ======================= JOHTO NORTH =========================
+; ============================================================
+
+; High Mountain Summit Climate
+#define WEATHER_ID_ROUTE28              Y0
+#define WEATHER_ID_MTSILVER_EXTERIOR    Y0
+#define WEATHER_ID_MTSILVER_SUMMIT      Y0
+
+; Ice Cavern Climate (all Ice Path floors share)
+#define WEATHER_ID_ICEPATH_1F           Y1
+#define WEATHER_ID_ICEPATH_B1F          Y1
+#define WEATHER_ID_ICEPATH_B2F          Y1
+#define WEATHER_ID_ICEPATH_B3F          Y1
+
+; Mahogany Basin Climate
+#define WEATHER_ID_MAHOGANYTOWN         Y2
+#define WEATHER_ID_ROUTE44              Y2
+
+; Lake of Rage Storm Belt
+#define WEATHER_ID_ROUTE43              Y3
+#define WEATHER_ID_LAKEOFRAGE           Y3
+
+; Blackthorn Ridge Climate
+#define WEATHER_ID_BLACKTHORNCITY       Y4
+#define WEATHER_ID_BLACKTHORN_GYM       Y4
+
+; Route 45 Cliffside
+#define WEATHER_ID_ROUTE45              Y5
+
+
+
+; ============================================================
+; ======================= JOHTO WEST ==========================
+; ============================================================
+
+; Ecruteak–Olivine Corridor
+#define WEATHER_ID_ROUTE42              X0
+#define WEATHER_ID_ECRUTEAKCITY         X0
+
+; Burned Tower Exposed Floor
+#define WEATHER_ID_BURNEDTOWER_1F       X0
+
+
+#define WEATHER_ID_PEACHWOODTOWN        X1
+
+; Western Plains (Routes 38–39)
+#define WEATHER_ID_ROUTE38              X2
+#define WEATHER_ID_ROUTE39              X2
+
+; Olivine Coastline
+#define WEATHER_ID_OLIVINECITY          X3
+#define WEATHER_ID_ROUTE40              X3
+
+; Whirl Islands Exterior + Route 41
+#define WEATHER_ID_WHIRLISLANDS_EXT     X4
+#define WEATHER_ID_ROUTE41              X4
+
+; Cianwood Coast
+#define WEATHER_ID_CIANWOODCITY         X4
+#define WEATHER_ID_CIANWOOD_GYM         X4
+
+; Cliffside Routes (47–48)
+#define WEATHER_ID_ROUTE47              X5
+#define WEATHER_ID_ROUTE48              X5
+
+; Custom Western Maps
+#define WEATHER_ID_ROUTE49              X6
+#define WEATHER_ID_ROUTE50              X7
+#define WEATHER_ID_BLEAKRESTCOVE        X8
+#define WEATHER_ID_OBSIDIANCITY         X7
+
+
+
+; ============================================================
+; ======================= JOHTO SOUTH =========================
+; ============================================================
+
+; New Bark → Cherrygrove Corridor
+#define WEATHER_ID_NEWBARKTOWN          Z0
+#define WEATHER_ID_ROUTE29              Z0
+
+; Violet Region
+#define WEATHER_ID_ROUTE31              Z1
+#define WEATHER_ID_VIOLETCITY           Z1
+
+; Route 32 / Union Cave Exterior
+#define WEATHER_ID_ROUTE32              Z2
+
+; Azalea Region
+#define WEATHER_ID_ROUTE33              Z3
+#define WEATHER_ID_AZALEATOWN           Z3
+
+; Ilex Forest
+#define WEATHER_ID_ILEXFOREST           Z4
+
+; Goldenrod Region
+#define WEATHER_ID_ROUTE34              Z5
+#define WEATHER_ID_GOLDENRODCITY        Z5
+
+; National Park + Routes 35–37
+#define WEATHER_ID_ROUTE35              Z6
+#define WEATHER_ID_NATIONALPARK         Z6
+#define WEATHER_ID_ROUTE36              Z6
+#define WEATHER_ID_ROUTE37              Z6
+
+; Ruins of Alph Exterior
+#define WEATHER_ID_RUINSOFALPH_EXT      Z7
+
+; Route 46 (Johto South side)
+#define WEATHER_ID_ROUTE46              Z8
+
+; Cherrygrove + Route30
+#define WEATHER_ID_ROUTE30              Z9
+#define WEATHER_ID_CHERRYGROVECITY      Z9
+
+
+; ============================================================
+; ===================== KANTO COASTAL =========================
+; ============================================================
+
+; Viridian → Pallet Corridor
+#define WEATHER_ID_VIRIDIANCITY         C0
+#define WEATHER_ID_ROUTE1               C0
+#define WEATHER_ID_PALLETTOWN           C0
+
+; Pallet → Cinnabar Sea Route
+#define WEATHER_ID_ROUTE21              C1
+#define WEATHER_ID_ROUTE20              C1
+#define WEATHER_ID_CINNABARISLAND       C1
+
+; Fuchsia Coast
+#define WEATHER_ID_ROUTE19              C2
+#define WEATHER_ID_FUCHSIACITY          C2
+
+; Eastern Coastline (Routes 13–15)
+#define WEATHER_ID_ROUTE13              C3
+#define WEATHER_ID_ROUTE14              C3
+#define WEATHER_ID_ROUTE15              C3
+
+; Lavender Coast (Route 12)
+#define WEATHER_ID_ROUTE12              C4
+
+; Vermilion Coast
+#define WEATHER_ID_ROUTE11              C5
+#define WEATHER_ID_VERMILIONCITY        C5
+#define WEATHER_ID_ROUTE6               C5
+
+; Cycling Road (Routes 16–18)
+#define WEATHER_ID_ROUTE16              C6
+#define WEATHER_ID_ROUTE17              C6
+#define WEATHER_ID_ROUTE18              C6
+
+; Seafoam Exterior
+#define WEATHER_ID_SEAFOAM_EXT          C7
+
+; Safari Zone Exterior
+#define WEATHER_ID_SAFARIZONE_EXT       C8
+
+
+
+; ============================================================
+; ===================== KANTO INLAND ==========================
+; ============================================================
+
+; Pewter Region
+#define WEATHER_ID_PEWTERCITY           I0
+#define WEATHER_ID_ROUTE2               I0
+#define WEATHER_ID_ROUTE3               I0
+
+; Viridian Forest
+#define WEATHER_ID_VIRIDIANFOREST       I7
+; Cerulean Region
+#define WEATHER_ID_CERULEANCITY         I1
+#define WEATHER_ID_ROUTE4               I1
+#define WEATHER_ID_ROUTE24              I1
+#define WEATHER_ID_ROUTE25              I1
+#define WEATHER_ID_CERULEANCAPE         I1
+
+; Saffron Region
+#define WEATHER_ID_SAFFRONCITY          I2
+#define WEATHER_ID_ROUTE5               I2
+#define WEATHER_ID_ROUTE8               I2
+
+; Celadon Region
+#define WEATHER_ID_CELADONCITY          I3
+#define WEATHER_ID_ROUTE7               I3
+
+; Lavender Region
+#define WEATHER_ID_LAVENDERTOWN         I4
+#define WEATHER_ID_ROUTE10              I4
+
+; Route 9 / Power Plant Exterior
+#define WEATHER_ID_ROUTE9               I5
+#define WEATHER_ID_POWERPLANT_EXT       I5
+#define WEATHER_ID_ROCKTUNNEL_EXT       I5
+
+; Victory Road / Indigo Plateau
+#define WEATHER_ID_ROUTE22              I6
+#define WEATHER_ID_ROUTE23              I6
+#define WEATHER_ID_INDIGOPLATEAU_EXT    I6
+
+; Pokemon Tower
+#define WEATHER_ID_POKEMONTOWER         I8
+
+; ============================================================
+; =================== SEVII ISLANDS 1–3 =======================
+; ============================================================
+
+; One Island
+#define WEATHER_ID_ONEISLAND            S0
+#define WEATHER_ID_KINDLEROAD           S0
+#define WEATHER_ID_TREASUREBEACH        S0
+
+; Mt Ember Exterior
+#define WEATHER_ID_MTEMBER_EXT          S1
+
+; Two Island
+#define WEATHER_ID_TWOISLAND            S2
+#define WEATHER_ID_CAPEBRINK            S2
+
+; Three Island
+#define WEATHER_ID_THREEISLAND          S3
+#define WEATHER_ID_BONDBRIDGE           S3
+#define WEATHER_ID_BERRYFOREST          S3
+
+; Water Labyrinth / Resort Gorgeous
+#define WEATHER_ID_WATERLABYRINTH       S4
+#define WEATHER_ID_RESORTGORGEOUS       S4
+
+; Birth Island (Event Island)
+#define WEATHER_ID_BIRTHISLAND_EXT      S5
+#define WEATHER_ID_BIRTHISLAND_HARBOR   S5
+
+
+; ============================================================
+; =================== SEVII ISLANDS 4–7 =======================
+; ============================================================
+
+; Four Island
+#define WEATHER_ID_FOURISLAND           V0
+#define WEATHER_ID_ICEFALLCAVE_EXT      V0
+
+; Five Island
+#define WEATHER_ID_FIVEISLAND           V1
+#define WEATHER_ID_MEMORIALPILLAR       V1
+#define WEATHER_ID_RESORTAREA           V1
+
+; Six Island
+#define WEATHER_ID_SIXISLAND            V2
+#define WEATHER_ID_PATTERNBUSH          V2
+#define WEATHER_ID_RUINVALLEY           V2
+
+; Seven Island
+#define WEATHER_ID_SEVENISLAND          V3
+#define WEATHER_ID_SEVAULTCANYON        V3
+#define WEATHER_ID_TANOBYRUINS_EXT      V3
+
+; Trainer Tower Exterior
+#define WEATHER_ID_TRAINERTOWER_EXT     V4
+
+; Navel Rock (Event Island)
+#define WEATHER_ID_NAVELROCK_EXT        V5
+#define WEATHER_ID_NAVELROCK_HARBOR     V5
+#define WEATHER_ID_NAVELROCK_SUMMIT     V5
+

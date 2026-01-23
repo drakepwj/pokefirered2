@@ -1,2 +1,2 @@
-SproutTower_MapScripts::
+SproutTower_3F_MapScripts::
     .byte 0

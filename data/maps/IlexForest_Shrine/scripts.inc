@@ -1,2 +1,2 @@
-RuinsOfAlph_InnerChamber_MapScripts::
+IlexForest_Shrine_MapScripts::
     .byte 0

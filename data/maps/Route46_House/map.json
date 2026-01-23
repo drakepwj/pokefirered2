@@ -1,6 +1,6 @@
 {
-    "id": "MAP_CHERRYGROVE_HOUSE1",
-    "name": "Cherrygrove_House1",
+    "id": "MAP_ROUTE46_HOUSE",
+    "name": "Route46_House",
     "layout": "LAYOUT_CHERRYGROVE_HOUSE1",
     "music": "MUS_PALLET",
     "region_map_section": "MAPSEC_ABANDONED_SHIP",

@@ -1,6 +1,6 @@
 {
-    "id": "MAP_SPROUTTOWER",
-    "name": "SproutTower",
+    "id": "MAP_SPROUTTOWER_1F",
+    "name": "SproutTower_1F",
     "layout": "LAYOUT_SPROUTTOWER",
     "music": "MUS_POKE_TOWER",
     "region_map_section": "MAPSEC_POKEMON_TOWER",

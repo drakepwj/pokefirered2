@@ -1,6 +1,6 @@
 {
-    "id": "MAP_NEWBARK_POKECENTER",
-    "name": "NewBark_Pokecenter",
+    "id": "MAP_NEWBARK_LAB",
+    "name": "NewBark_Lab",
     "layout": "LAYOUT_POKEMON_CENTER_1F",
     "music": "MUS_POKE_CENTER",
     "region_map_section": "MAPSEC_CERULEAN_CITY",

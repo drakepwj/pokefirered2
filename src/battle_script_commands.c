@@ -1045,12 +1045,23 @@ static void Cmd_accuracycheck(void)
         if (gBattleMons[gBattlerTarget].status2 & STATUS2_FORESIGHT)
         {
             u8 acc = gBattleMons[gBattlerAttacker].statStages[STAT_ACC];
-            buff = acc;
+            buff = acc;  // Foresight ignores fog completely
         }
+
         else
         {
             u8 acc = gBattleMons[gBattlerAttacker].statStages[STAT_ACC];
-            buff = acc + DEFAULT_STAT_STAGE - gBattleMons[gBattlerTarget].statStages[STAT_EVASION];
+
+            // Fog = treat attacker as if hit by 1 Sand-Attack
+            // Keen Eye prevents accuracy drops
+            if (gBattleStruct->blizzardFogActive
+                && gBattleMons[gBattlerAttacker].ability != ABILITY_KEEN_EYE)
+            {
+                if (acc > 0)
+                    acc--;
+            }
+
+        buff = acc + DEFAULT_STAT_STAGE - gBattleMons[gBattlerTarget].statStages[STAT_EVASION];
         }
 
         if (buff < MIN_STAT_STAGE)

@@ -65,22 +65,99 @@ static bool8 LightenSpritePaletteInFog(u8 paletteIndex);
 
 struct Weather *const gWeatherPtr = &sWeather;
 
-static const struct WeatherCallbacks sWeatherFuncs[] = {
-    {None_Init, None_Main, None_Init, None_Finish},
-    {Clouds_InitVars, Clouds_Main, Clouds_InitAll, Clouds_Finish},
-    {Sunny_InitVars, Sunny_Main, Sunny_InitAll, Sunny_Finish},
-    {Rain_InitVars, Rain_Main, Rain_InitAll, Rain_Finish},
-    {Snow_InitVars, Snow_Main, Snow_InitAll, Snow_Finish},
-    {Thunderstorm_InitVars, Thunderstorm_Main, Thunderstorm_InitAll, Thunderstorm_Finish},
-    {FogHorizontal_InitVars, FogHorizontal_Main, FogHorizontal_InitAll, FogHorizontal_Finish},
-    {Ash_InitVars, Ash_Main, Ash_InitAll, Ash_Finish},
-    {Sandstorm_InitVars, Sandstorm_Main, Sandstorm_InitAll, Sandstorm_Finish},
-    {FogDiagonal_InitVars, FogDiagonal_Main, FogDiagonal_InitAll, FogDiagonal_Finish},
-    {FogHorizontal_InitVars, FogHorizontal_Main, FogHorizontal_InitAll, FogHorizontal_Finish},
-    {Shade_InitVars, Shade_Main, Shade_InitAll, Shade_Finish},
-    {Drought_InitVars, Drought_Main, Drought_InitAll, Drought_Finish},
-    {Downpour_InitVars, Thunderstorm_Main, Downpour_InitAll, Thunderstorm_Finish},
-    {Bubbles_InitVars, Bubbles_Main, Bubbles_InitAll, Bubbles_Finish},
+static const struct WeatherCallbacks sWeatherFuncs[] =
+{
+    // 0 — NONE (indoors only)
+    [WEATHER_NONE] =
+        { None_Init, None_Main, None_Init, None_Finish },
+
+    // 1 — SUNNY_CLOUDS (unused vanilla)
+    [WEATHER_SUNNY_CLOUDS] =
+        { Clouds_InitVars, Clouds_Main, Clouds_InitAll, Clouds_Finish },
+
+    // 2 — SUNNY
+    [WEATHER_SUNNY] =
+        { Sunny_InitVars, Sunny_Main, Sunny_InitAll, Sunny_Finish },
+
+    // 3 — RAIN
+    [WEATHER_RAIN] =
+        { Rain_InitVars, Rain_Main, Rain_InitAll, Rain_Finish },
+
+    // 4 — SNOW (vanilla snow/hail effect)
+    [WEATHER_SNOW] =
+        { Snow_InitVars, Snow_Main, Snow_InitAll, Snow_Finish },
+
+    // 5 — THUNDERSTORM
+    [WEATHER_RAIN_THUNDERSTORM] =
+        { Thunderstorm_InitVars, Thunderstorm_Main, Thunderstorm_InitAll, Thunderstorm_Finish },
+
+    // 6 — FOG_HORIZONTAL (vanilla fog)
+    [WEATHER_FOG_HORIZONTAL] =
+        { FogHorizontal_InitVars, FogHorizontal_Main, FogHorizontal_InitAll, FogHorizontal_Finish },
+
+    // 7 — VOLCANIC ASH
+    [WEATHER_VOLCANIC_ASH] =
+        { Ash_InitVars, Ash_Main, Ash_InitAll, Ash_Finish },
+
+    // 8 — SANDSTORM
+    [WEATHER_SANDSTORM] =
+        { Sandstorm_InitVars, Sandstorm_Main, Sandstorm_InitAll, Sandstorm_Finish },
+
+    // 9 — FOG_DIAGONAL (unused)
+    [WEATHER_FOG_DIAGONAL] =
+        { FogDiagonal_InitVars, FogDiagonal_Main, FogDiagonal_InitAll, FogDiagonal_Finish },
+
+    // 10 — UNDERWATER (unused)
+    [WEATHER_UNDERWATER] =
+        { None_Init, None_Main, None_Init, None_Finish },
+
+    // 11 — SHADE
+    [WEATHER_SHADE] =
+        { Shade_InitVars, Shade_Main, Shade_InitAll, Shade_Finish },
+
+    // 12 — DROUGHT (harsh sunlight)
+    [WEATHER_DROUGHT] =
+        { Drought_InitVars, Drought_Main, Drought_InitAll, Drought_Finish },
+
+    // 13 — DOWNPOUR (heavy rain)
+    [WEATHER_DOWNPOUR] =
+        { Downpour_InitVars, Thunderstorm_Main, Downpour_InitAll, Thunderstorm_Finish },
+
+    // 14 — UNDERWATER_BUBBLES (unused)
+    [WEATHER_UNDERWATER_BUBBLES] =
+        { Bubbles_InitVars, Bubbles_Main, Bubbles_InitAll, Bubbles_Finish },
+
+    // ---------------------------------------------------------
+    // CUSTOM WEATHER TYPES (your additions)
+    // ---------------------------------------------------------
+
+    // 22 — BLIZZARD (hail + fog overlay)
+    [WEATHER_BLIZZARD] =
+        { Snow_InitVars, Snow_Main, Snow_InitAll, Snow_Finish },
+
+    // 23 — CLEAR (slightly brighter than NONE)
+    [WEATHER_CLEAR] =
+        { Sunny_InitVars, Sunny_Main, Sunny_InitAll, Sunny_Finish },
+
+    // 24 — HAIL (same as snow effect)
+    [WEATHER_HAIL] =
+        { Snow_InitVars, Snow_Main, Snow_InitAll, Snow_Finish },
+
+    // 25 — EXTREME SUN (your mythic sunlight)
+    [WEATHER_EXTREME_SUN] =
+        { Drought_InitVars, Drought_Main, Drought_InitAll, Drought_Finish },
+
+    // 26 — OVERCAST (clouds)
+    [WEATHER_OVERCAST] =
+        { Clouds_InitVars, Clouds_Main, Clouds_InitAll, Clouds_Finish },
+
+    // 27 — HEAVY RAIN (Kyogre-tier)
+    [WEATHER_HEAVY_RAIN] =
+        { Downpour_InitVars, Thunderstorm_Main, Downpour_InitAll, Thunderstorm_Finish },
+
+    // 28 — FOG (your custom fog weather)
+    [WEATHER_FOG] =
+        { FogHorizontal_InitVars, FogHorizontal_Main, FogHorizontal_InitAll, FogHorizontal_Finish },
 };
 
 static void (*const sWeatherPalStateFuncs[])(void) = {

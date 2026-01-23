@@ -5018,6 +5018,18 @@
       "blockdata_filepath": "data/layouts/Olivine_House2/map.bin"
     },
     {
+      "id": "LAYOUT_CIANWOOD_MART",
+      "name": "Cianwood_Mart_Layout",
+      "width": 4,
+      "height": 4,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/Cianwood_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/Cianwood_Mart/map.bin"
+    },
+    {
       "id": "LAYOUT_CIANWOOD_HOUSE1",
       "name": "Cianwood_House1_Layout",
       "width": 13,
@@ -6408,6 +6420,54 @@
       "secondary_tileset": "gTileset_RockTunnel",
       "border_filepath": "data/layouts/GenericCave_DeepRoom/border.bin",
       "blockdata_filepath": "data/layouts/GenericCave_DeepRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_NATIONAL_PARK",
+      "name": "NationalPark_Layout",
+      "width": 40,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/NationalPark/border.bin",
+      "blockdata_filepath": "data/layouts/NationalPark/map.bin"
+    },
+    {
+      "id": "LAYOUT_NATIONAL_PARK_GATE_NORTH",
+      "name": "NationalPark_GateNorth_Layout",
+      "width": 40,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/NationalPark_GateNorth/border.bin",
+      "blockdata_filepath": "data/layouts/NationalPark_GateNorth/map.bin"
+    },
+    {
+      "id": "LAYOUT_NATIONAL_PARK_GATE_SOUTH",
+      "name": "NationalPark_GateSouth_Layout",
+      "width": 40,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/NationalPark_GateSouth/border.bin",
+      "blockdata_filepath": "data/layouts/NationalPark_GateSouth/map.bin"
+    },
+    {
+      "id": "LAYOUT_NATIONAL_PARK_BUGCONTEST",
+      "name": "NationalPark_BugContest_Layout",
+      "width": 40,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/NationalPark_BugContest/border.bin",
+      "blockdata_filepath": "data/layouts/NationalPark_BugContest/map.bin"
     }
   ]
 }
