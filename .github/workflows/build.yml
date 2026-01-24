@@ -24,13 +24,6 @@ jobs:
           path: 'agbcc'
           repository: 'pret/agbcc'
 
-      - name: Checkout symbols
-        if: ${{ github.event_name == 'push' }}
-        uses: actions/checkout@master
-        with:
-          path: 'symbols'
-          ref: 'symbols'
-
       - name: Install binutils
         run: sudo apt install gcc-arm-none-eabi binutils-arm-none-eabi libpng-dev
         # build-essential and git are already installed
