@@ -114,6 +114,7 @@ u8 UpdatePaletteFade(void)
 {
     u8 result;
     u8 dummy = 0;
+    gPaletteFade.active = FALSE;
 
     if (sPlttBufferTransferPending)
         return PALETTE_FADE_STATUS_LOADING;
@@ -124,6 +125,9 @@ u8 UpdatePaletteFade(void)
     else
         result = UpdateHardwarePaletteFade();
     sPlttBufferTransferPending = gPaletteFade.multipurpose1 | dummy;
+
+    CpuCopy16((void *)PLTT, gPlttBufferUnfaded, PLTT_SIZE);
+
     return result;
 }
 

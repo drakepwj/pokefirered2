@@ -69,6 +69,10 @@
 #define FACING_FORCED_LEFT 9
 #define FACING_FORCED_RIGHT 10
 
+
+void ApplyFullPaletteStack(void);
+
+
 typedef u16 (*KeyInterCB)(u32 key);
 
 struct InitialPlayerAvatarState
@@ -767,8 +771,6 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     InitMap();
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
     LoadSecondaryTilesetPalette(gMapHeader.mapLayout);
-    for (paletteIndex = 7; paletteIndex < 13; paletteIndex++)
-        ApplyWeatherGammaShiftToPal(paletteIndex);
     InitSecondaryTilesetAnimation();
     UpdateLocationHistoryForRoamer();
     RoamerMove();
@@ -1462,6 +1464,9 @@ static void OverworldBasic(void)
     UpdateCameraPanning();
     BuildOamBuffer();
     UpdatePaletteFade();
+
+    /// applyfullpalettewashere-everything became black
+    ApplyFullPaletteStack();
     UpdateTilesetAnimations();
     DoScheduledBgTilemapCopiesToVram();
 }

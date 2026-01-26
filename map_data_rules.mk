@@ -38,3 +38,6 @@ $(LAYOUTS_OUTDIR)/layouts.inc $(LAYOUTS_OUTDIR)/layouts_table.inc $(INCLUDECONST
 $(INCLUDECONSTS_OUTDIR)/map_event_ids.h: $(MAP_JSONS)
 	@$(MAPJSON) event_constants firered $^ $(INCLUDECONSTS_OUTDIR)/map_event_ids.h
 	@echo "$(MAPJSON) event_constants firered <MAP_JSONS> $(INCLUDECONSTS_OUTDIR)/map_event_ids.h"
+
+data/maps/weather/weather_ids.s: data/maps/weather/weather_ids.inc tools/gen_weather_ids.py
+	python3 tools/gen_weather_ids.py

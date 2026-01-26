@@ -838,74 +838,27 @@ static void CopyTilesetToVramUsingHeap(struct Tileset const *tileset, u16 numTil
     }
 }
 
-static void ApplyGlobalTintToPaletteEntries(u16 offset, u16 size)
+static void LoadTilesetPalette(const struct Tileset *tileset, u16 destOffset, u16 size)
 {
-    switch (gGlobalFieldTintMode)
+    if (!tileset)
+        return;
+
+    if (tileset->isSecondary == FALSE)
     {
-    case QL_TINT_NONE:
-        return;
-    case QL_TINT_GRAYSCALE:
-        TintPalette_GrayScale(&gPlttBufferUnfaded[offset], size);
-        break;
-    case QL_TINT_SEPIA:
-        TintPalette_SepiaTone(&gPlttBufferUnfaded[offset], size);
-        break;
-    case QL_TINT_BACKUP_GRAYSCALE:
-        QuestLog_BackUpPalette(offset, size);
-        TintPalette_GrayScale(&gPlttBufferUnfaded[offset], size);
-        break;
-    default:
-        return;
+        u16 black = RGB_BLACK;
+        LoadPalette(&black, destOffset, PLTT_SIZEOF(1));
+        LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
     }
-    CpuCopy16(&gPlttBufferUnfaded[offset], &gPlttBufferFaded[offset], PLTT_SIZEOF(size));
-}
-
-void ApplyGlobalTintToPaletteSlot(u8 slot, u8 count)
-{
-    switch (gGlobalFieldTintMode)
+    else if (tileset->isSecondary == TRUE)
     {
-    case QL_TINT_NONE:
-        return;
-    case QL_TINT_GRAYSCALE:
-        TintPalette_GrayScale(&gPlttBufferUnfaded[BG_PLTT_ID(slot)], count * 16);
-        break;
-    case QL_TINT_SEPIA:
-        TintPalette_SepiaTone(&gPlttBufferUnfaded[BG_PLTT_ID(slot)], count * 16);
-        break;
-    case QL_TINT_BACKUP_GRAYSCALE:
-        QuestLog_BackUpPalette(BG_PLTT_ID(slot), count * 16);
-        TintPalette_GrayScale(&gPlttBufferUnfaded[BG_PLTT_ID(slot)], count * 16);
-        break;
-    default:
-        return;
+        LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
     }
-    CpuFastCopy(&gPlttBufferUnfaded[BG_PLTT_ID(slot)], &gPlttBufferFaded[BG_PLTT_ID(slot)], count * PLTT_SIZE_4BPP);
-}
-
-static void LoadTilesetPalette(struct Tileset const *tileset, u16 destOffset, u16 size)
-{
-    u16 black = RGB_BLACK;
-
-    if (tileset)
+    else
     {
-        if (tileset->isSecondary == FALSE)
-        {
-            LoadPalette(&black, destOffset, PLTT_SIZEOF(1));
-            LoadPalette(tileset->palettes[0] + 1, destOffset + 1, size - PLTT_SIZEOF(1));
-            ApplyGlobalTintToPaletteEntries(destOffset + 1, (size - 2) >> 1);
-        }
-        else if (tileset->isSecondary == TRUE)
-        {
-            LoadPalette(tileset->palettes[NUM_PALS_IN_PRIMARY], destOffset, size);
-            ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
-        }
-        else
-        {
-            LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
-            ApplyGlobalTintToPaletteEntries(destOffset, size >> 1);
-        }
+        LoadCompressedPalette((const u32 *)tileset->palettes, destOffset, size);
     }
 }
+
 
 void CopyPrimaryTilesetToVram(const struct MapLayout *mapLayout)
 {
@@ -947,5 +900,7 @@ void LoadMapTilesetPalettes(struct MapLayout const *mapLayout)
     {
         LoadPrimaryTilesetPalette(mapLayout);
         LoadSecondaryTilesetPalette(mapLayout);
+
+        CpuCopy16((void *)PLTT, gPlttBufferUnfaded, PLTT_SIZE);
     }
 }

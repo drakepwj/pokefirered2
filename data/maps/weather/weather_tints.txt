@@ -1,0 +1,219 @@
+/*
+===========================================================
+   PALETTE EFFECTS REFERENCE — RSE STYLE + DAY/NIGHT STACK
+===========================================================
+
+This file documents the palette transforms used for your
+custom weather system. It is NOT engine code — it is a
+reference sheet you can keep in your repo to guide your
+actual palette implementation.
+
+ORDER OF OPERATIONS (IMPORTANT):
+--------------------------------
+1. ApplyDayNightTint()
+2. ApplyWeatherTint()
+3. ApplyFogBlizzardTint()
+
+This matches RSE’s visual logic while supporting your
+custom day/night system and mythic weather types.
+*/
+
+
+// ===========================================================
+// 1. DAY / NIGHT TINTS
+// ===========================================================
+
+/*
+DAY (06:00–17:59)
+-----------------
+No tint applied.
+*/
+
+#define DAY_BRIGHTNESS      0
+#define DAY_CONTRAST        0
+#define DAY_SATURATION      0
+#define DAY_TINT_R          0
+#define DAY_TINT_G          0
+#define DAY_TINT_B          0
+
+/*
+NIGHT (18:00–05:59)
+-------------------
+RSE-style night tint (cool, slightly dim).
+*/
+
+#define NIGHT_BRIGHTNESS   -15   // darker
+#define NIGHT_CONTRAST       0
+#define NIGHT_SATURATION   -10
+#define NIGHT_TINT_R         0
+#define NIGHT_TINT_G         0
+#define NIGHT_TINT_B        25   // blue tint
+
+
+
+// ===========================================================
+// 2. WEATHER TINTS (RSE-STYLE)
+// ===========================================================
+
+/*
+CLEAR (Gamma +0.5)
+------------------
+Mild brighten.
+*/
+#define CLEAR_BRIGHTNESS     5
+#define CLEAR_CONTRAST       0
+#define CLEAR_SATURATION     0
+#define CLEAR_TINT_R         0
+#define CLEAR_TINT_G         0
+#define CLEAR_TINT_B         0
+
+/*
+SUNNY (Gamma +1)
+----------------
+Slight brighten.
+*/
+#define SUNNY_BRIGHTNESS    10
+#define SUNNY_CONTRAST       5
+#define SUNNY_SATURATION     0
+#define SUNNY_TINT_R         0
+#define SUNNY_TINT_G         0
+#define SUNNY_TINT_B         0
+
+/*
+EXTREME SUN (Gamma +2)
+----------------------
+Strong brighten, harsh contrast.
+*/
+#define EXTREMESUN_BRIGHTNESS   20
+#define EXTREMESUN_CONTRAST     10
+#define EXTREMESUN_SATURATION    5
+#define EXTREMESUN_TINT_R        0
+#define EXTREMESUN_TINT_G        0
+#define EXTREMESUN_TINT_B        0
+
+/*
+OVERCAST (Gamma -0.5)
+---------------------
+Slight dim.
+*/
+#define OVERCAST_BRIGHTNESS   -5
+#define OVERCAST_CONTRAST     -5
+#define OVERCAST_SATURATION   -5
+#define OVERCAST_TINT_R        0
+#define OVERCAST_TINT_G        0
+#define OVERCAST_TINT_B        0
+
+/*
+RAIN (Gamma -1)
+---------------
+Medium darken.
+*/
+#define RAIN_BRIGHTNESS      -12
+#define RAIN_CONTRAST         -5
+#define RAIN_SATURATION       -5
+#define RAIN_TINT_R            0
+#define RAIN_TINT_G            0
+#define RAIN_TINT_B            0
+
+/*
+HEAVY RAIN (Gamma -2)
+---------------------
+Strong darken.
+*/
+#define HEAVYRAIN_BRIGHTNESS   -20
+#define HEAVYRAIN_CONTRAST     -10
+#define HEAVYRAIN_SATURATION   -10
+#define HEAVYRAIN_TINT_R         0
+#define HEAVYRAIN_TINT_G         0
+#define HEAVYRAIN_TINT_B         0
+
+/*
+HAIL (Gamma +0 + cold tint)
+---------------------------
+Slight brighten + cold tone.
+*/
+#define HAIL_BRIGHTNESS        5
+#define HAIL_CONTRAST          0
+#define HAIL_SATURATION       -5
+#define HAIL_TINT_R            0
+#define HAIL_TINT_G            0
+#define HAIL_TINT_B           10
+
+/*
+BLIZZARD (Gamma -1 + cold tint)
+-------------------------------
+Darken + strong cold tone.
+*/
+#define BLIZZARD_BRIGHTNESS   -10
+#define BLIZZARD_CONTRAST      -5
+#define BLIZZARD_SATURATION   -10
+#define BLIZZARD_TINT_R         0
+#define BLIZZARD_TINT_G         0
+#define BLIZZARD_TINT_B        20
+
+
+
+// ===========================================================
+// 3. FOG / BLIZZARD OVERLAY TINTS
+// ===========================================================
+
+/*
+FOG (white blend)
+-----------------
+Desaturate + brighten + white tint.
+*/
+#define FOG_BRIGHTNESS       10
+#define FOG_CONTRAST        -10
+#define FOG_SATURATION      -20
+#define FOG_TINT_R           15
+#define FOG_TINT_G           15
+#define FOG_TINT_B           15
+
+/*
+BLIZZARD OVERLAY
+----------------
+Cold white-blue blend.
+*/
+#define BLIZZARDOVERLAY_BRIGHTNESS    0
+#define BLIZZARDOVERLAY_CONTRAST      0
+#define BLIZZARDOVERLAY_SATURATION   -10
+#define BLIZZARDOVERLAY_TINT_R         5
+#define BLIZZARDOVERLAY_TINT_G         5
+#define BLIZZARDOVERLAY_TINT_B        20
+
+
+
+// ===========================================================
+// 4. FUNCTION STUBS (REFERENCE ONLY)
+// ===========================================================
+
+/*
+These are NOT engine code — they are conceptual stubs
+showing the correct order and structure.
+*/
+
+void ApplyDayNightTint(Color *c, bool isNight)
+{
+    // Apply NIGHT_* or DAY_* constants
+}
+
+void ApplyWeatherTint(Color *c, int weatherType)
+{
+    // Switch(weatherType) and apply the constants above
+}
+
+void ApplyFogBlizzardTint(Color *c, bool fogActive, bool blizzardActive)
+{
+    // Apply FOG_* or BLIZZARDOVERLAY_* constants
+}
+
+/*
+FINAL ORDER:
+------------
+ApplyDayNightTint()
+ApplyWeatherTint()
+ApplyFogBlizzardTint()
+
+This produces RSE-accurate visuals with your custom
+day/night system and mythic weather types.
+*/

@@ -12,6 +12,7 @@
 #include "constants/easy_chat.h"
 #include "constants/rgb.h"
 
+
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
 
@@ -355,6 +356,10 @@ struct SaveBlock2
     /*0xB00*/ struct PokemonJumpRecords pokeJump;
     /*0xB10*/ struct BerryPickingResults berryPick;
     /*0xB20*/ u8 filler_B20[0x400];
+
+              u8 weatherRollHour;
+              u16 weatherRoll;
+
     /*0xF20*/ u32 encryptionKey;
 }; // size: 0xF24
 

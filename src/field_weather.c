@@ -10,6 +10,7 @@
 #include "constants/field_weather.h"
 #include "constants/weather.h"
 #include "constants/songs.h"
+#include "data/weather_tints.inc" // tint constants + comments
 
 #define DROUGHT_COLOR_INDEX(color) ((((color) >> 1) & 0xF) | (((color) >> 2) & 0xF0) | (((color) >> 3) & 0xF00))
 
@@ -26,6 +27,72 @@ struct RGBColor
     u16 g:5;
     u16 b:5;
 };
+
+typedef struct RGBColor Color;
+
+struct TintParams
+{
+    s8 brightness;
+    s8 contrast;
+    s8 saturation;
+    s8 tintR;
+    s8 tintG;
+    s8 tintB;
+};
+
+static int TintParamsEqual(const struct TintParams *a, const struct TintParams *b)
+{
+    int i;
+    const u8 *pa = (const u8 *)a;
+    const u8 *pb = (const u8 *)b;
+
+    for (i = 0; i < (int)sizeof(struct TintParams); i++)
+    {
+        if (pa[i] != pb[i])
+            return 0;
+    }
+    return 1;
+}
+
+
+static EWRAM_DATA struct TintParams sDayNightTint = {0};
+static EWRAM_DATA struct TintParams sWeatherTint = {0};
+static EWRAM_DATA struct TintParams sFogBlizzardTint = {0};
+
+
+static EWRAM_DATA struct TintParams sPrevFinalTint = {0};
+static EWRAM_DATA struct TintParams sCurrFinalTint = {0};
+static EWRAM_DATA struct TintParams sTargetFinalTint = {0};
+
+static EWRAM_DATA int sTintLerpFrame = 0;
+static const int sTintLerpMax = 120; // 2 seconds
+
+static void CombineTintLayers(struct TintParams *out,
+                              const struct TintParams *dayNight,
+                              const struct TintParams *weather,
+                              const struct TintParams *fog)
+{
+    out->brightness = dayNight->brightness + weather->brightness + fog->brightness;
+    out->contrast   = dayNight->contrast   + weather->contrast   + fog->contrast;
+    out->saturation = dayNight->saturation + weather->saturation + fog->saturation;
+    out->tintR      = dayNight->tintR      + weather->tintR      + fog->tintR;
+    out->tintG      = dayNight->tintG      + weather->tintG      + fog->tintG;
+    out->tintB      = dayNight->tintB      + weather->tintB      + fog->tintB;
+}
+
+static void LerpFinalTint(struct TintParams *out,
+                          const struct TintParams *a,
+                          const struct TintParams *b,
+                          float t)
+{
+    out->brightness = a->brightness + (int)((b->brightness - a->brightness) * t);
+    out->contrast   = a->contrast   + (int)((b->contrast   - a->contrast)   * t);
+    out->saturation = a->saturation + (int)((b->saturation - a->saturation) * t);
+    out->tintR      = a->tintR      + (int)((b->tintR      - a->tintR)      * t);
+    out->tintG      = a->tintG      + (int)((b->tintG      - a->tintG)      * t);
+    out->tintB      = a->tintB      + (int)((b->tintB      - a->tintB)      * t);
+}
+
 
 struct WeatherPaletteData
 {
@@ -63,101 +130,331 @@ static void DoNothing(void);
 static void ApplyFogBlend(u8 blendCoeff, u16 blendColor);
 static bool8 LightenSpritePaletteInFog(u8 paletteIndex);
 
+// ===============================
+// Tint Math + Day/Night Curve
+// ===============================
+
+// Replace this with your RTC hour getter
+extern int GetCurrentHour(void);
+
+static inline s16 ClampS16(s16 x, s16 lo, s16 hi)
+{
+    if (x < lo) return lo;
+    if (x > hi) return hi;
+    return x;
+}
+
+static void ApplyTintToColor(Color *c, const struct TintParams *t)
+{
+    s16 r = c->r;
+    s16 g = c->g;
+    s16 b = c->b;
+
+    // Brightness
+    r += t->brightness;
+    g += t->brightness;
+    b += t->brightness;
+
+    // Contrast (centered around mid=15)
+    if (t->contrast != 0)
+    {
+        s16 mid = 15;
+        r = mid + ((r - mid) * (16 + t->contrast)) / 16;
+        g = mid + ((g - mid) * (16 + t->contrast)) / 16;
+        b = mid + ((b - mid) * (16 + t->contrast)) / 16;
+    }
+
+    // Saturation (push away from gray)
+    if (t->saturation != 0)
+    {
+        s16 gray = (r + g + b) / 3;
+        r = gray + ((r - gray) * (16 + t->saturation)) / 16;
+        g = gray + ((g - gray) * (16 + t->saturation)) / 16;
+        b = gray + ((b - gray) * (16 + t->saturation)) / 16;
+    }
+
+    // RGB tint
+    r += t->tintR;
+    g += t->tintG;
+    b += t->tintB;
+
+    c->r = ClampS16(r, 0, 31);
+    c->g = ClampS16(g, 0, 31);
+    c->b = ClampS16(b, 0, 31);
+}
+
+// ===============================
+// Stepped Day/Night Factor
+// Strong shifts at 6am and 6pm
+// ===============================
+
+static float GetNightFactor(void)
+{
+    int hour = GetCurrentHour(); // 0–23
+
+    if (hour >= 6 && hour < 10)
+        return 0.0f;   // full day
+    if (hour >= 10 && hour < 14)
+        return 0.15f;  // slight shift
+    if (hour >= 14 && hour < 18)
+        return 0.30f;  // neutral-ish
+    if (hour >= 18 && hour < 22)
+        return 0.70f;  // strong dusk
+    if (hour >= 22 || hour < 2)
+        return 1.0f;   // full night
+    if (hour >= 2 && hour < 6)
+        return 0.40f;  // early dawn
+
+    return 0.0f;
+}
+
+static void SetDayNightTintParams(void)
+{
+    float f = GetNightFactor(); // 0.0 → 1.0
+
+    sDayNightTint.brightness = DAY_BRIGHTNESS + (int)((NIGHT_BRIGHTNESS - DAY_BRIGHTNESS) * f);
+    sDayNightTint.contrast   = DAY_CONTRAST   + (int)((NIGHT_CONTRAST   - DAY_CONTRAST)   * f);
+    sDayNightTint.saturation = DAY_SATURATION + (int)((NIGHT_SATURATION - DAY_SATURATION) * f);
+    sDayNightTint.tintR      = DAY_TINT_R     + (int)((NIGHT_TINT_R     - DAY_TINT_R)     * f);
+    sDayNightTint.tintG      = DAY_TINT_G     + (int)((NIGHT_TINT_G     - DAY_TINT_G)     * f);
+    sDayNightTint.tintB      = DAY_TINT_B     + (int)((NIGHT_TINT_B     - DAY_TINT_B)     * f);
+}
+
+static void LerpTintParams(struct TintParams *out,
+                           const struct TintParams *a,
+                           const struct TintParams *b,
+                           float t)
+{
+    out->brightness = a->brightness + (int)((b->brightness - a->brightness) * t);
+    out->contrast   = a->contrast   + (int)((b->contrast   - a->contrast)   * t);
+    out->saturation = a->saturation + (int)((b->saturation - a->saturation) * t);
+    out->tintR      = a->tintR      + (int)((b->tintR      - a->tintR)      * t);
+    out->tintG      = a->tintG      + (int)((b->tintG      - a->tintG)      * t);
+    out->tintB      = a->tintB      + (int)((b->tintB      - a->tintB)      * t);
+}
+
+
+// ===============================
+// Weather Tint Params
+// ===============================
+
+static void SetWeatherTintParams(u8 weather)
+{
+    struct TintParams *t = &sWeatherTint;
+
+    t->brightness = 0;
+    t->contrast   = 0;
+    t->saturation = 0;
+    t->tintR      = 0;
+    t->tintG      = 0;
+    t->tintB      = 0;
+
+    switch (weather)
+    {
+    case WEATHER_CLEAR:
+        t->brightness = CLEAR_BRIGHTNESS;
+        t->contrast   = CLEAR_CONTRAST;
+        t->saturation = CLEAR_SATURATION;
+        t->tintR      = CLEAR_TINT_R;
+        t->tintG      = CLEAR_TINT_G;
+        t->tintB      = CLEAR_TINT_B;
+        break;
+
+    case WEATHER_SUNNY:
+        t->brightness = SUNNY_BRIGHTNESS;
+        t->contrast   = SUNNY_CONTRAST;
+        t->saturation = SUNNY_SATURATION;
+        t->tintR      = SUNNY_TINT_R;
+        t->tintG      = SUNNY_TINT_G;
+        t->tintB      = SUNNY_TINT_B;
+        break;
+
+    case WEATHER_EXTREME_SUN:
+        t->brightness = EXTREMESUN_BRIGHTNESS;
+        t->contrast   = EXTREMESUN_CONTRAST;
+        t->saturation = EXTREMESUN_SATURATION;
+        t->tintR      = EXTREMESUN_TINT_R;
+        t->tintG      = EXTREMESUN_TINT_G;
+        t->tintB      = EXTREMESUN_TINT_B;
+        break;
+
+    case WEATHER_OVERCAST:
+        t->brightness = OVERCAST_BRIGHTNESS;
+        t->contrast   = OVERCAST_CONTRAST;
+        t->saturation = OVERCAST_SATURATION;
+        t->tintR      = OVERCAST_TINT_R;
+        t->tintG      = OVERCAST_TINT_G;
+        t->tintB      = OVERCAST_TINT_B;
+        break;
+
+    case WEATHER_RAIN:
+    case WEATHER_RAIN_THUNDERSTORM:
+    case WEATHER_DOWNPOUR:
+        t->brightness = RAIN_BRIGHTNESS;
+        t->contrast   = RAIN_CONTRAST;
+        t->saturation = RAIN_SATURATION;
+        t->tintR      = RAIN_TINT_R;
+        t->tintG      = RAIN_TINT_G;
+        t->tintB      = RAIN_TINT_B;
+        break;
+
+    case WEATHER_HEAVY_RAIN:
+        t->brightness = HEAVYRAIN_BRIGHTNESS;
+        t->contrast   = HEAVYRAIN_CONTRAST;
+        t->saturation = HEAVYRAIN_SATURATION;
+        t->tintR      = HEAVYRAIN_TINT_R;
+        t->tintG      = HEAVYRAIN_TINT_G;
+        t->tintB      = HEAVYRAIN_TINT_B;
+        break;
+
+    case WEATHER_HAIL:
+        t->brightness = HAIL_BRIGHTNESS;
+        t->contrast   = HAIL_CONTRAST;
+        t->saturation = HAIL_SATURATION;
+        t->tintR      = HAIL_TINT_R;
+        t->tintG      = HAIL_TINT_G;
+        t->tintB      = HAIL_TINT_B;
+        break;
+
+    case WEATHER_BLIZZARD:
+        t->brightness = BLIZZARD_BRIGHTNESS;
+        t->contrast   = BLIZZARD_CONTRAST;
+        t->saturation = BLIZZARD_SATURATION;
+        t->tintR      = BLIZZARD_TINT_R;
+        t->tintG      = BLIZZARD_TINT_G;
+        t->tintB      = BLIZZARD_TINT_B;
+        break;
+
+    default:
+        break;
+    }
+}
+
+// ===============================
+// Fog / Blizzard Overlay Tint
+// ===============================
+
+static void SetFogBlizzardTintParams(u8 weather)
+{
+    struct TintParams *t = &sFogBlizzardTint;
+
+    t->brightness = 0;
+    t->contrast   = 0;
+    t->saturation = 0;
+    t->tintR      = 0;
+    t->tintG      = 0;
+    t->tintB      = 0;
+
+    switch (weather)
+    {
+    case WEATHER_FOG:
+    case WEATHER_FOG_HORIZONTAL:
+    case WEATHER_FOG_DIAGONAL:
+        t->brightness = FOG_BRIGHTNESS;
+        t->contrast   = FOG_CONTRAST;
+        t->saturation = FOG_SATURATION;
+        t->tintR      = FOG_TINT_R;
+        t->tintG      = FOG_TINT_G;
+        t->tintB      = FOG_TINT_B;
+        break;
+
+    case WEATHER_BLIZZARD:
+        t->brightness = BLIZZARDOVERLAY_BRIGHTNESS;
+        t->contrast   = BLIZZARDOVERLAY_CONTRAST;
+        t->saturation = BLIZZARDOVERLAY_SATURATION;
+        t->tintR      = BLIZZARDOVERLAY_TINT_R;
+        t->tintG      = BLIZZARDOVERLAY_TINT_G;
+        t->tintB      = BLIZZARDOVERLAY_TINT_B;
+        break;
+
+    default:
+        break;
+    }
+}
+
+// ===============================
+// Full Palette Stack
+// ===============================
+
+void ApplyFullPaletteStack(void)
+{
+    u16 i;
+    float t;
+    Color c;
+    u8 palIndex;
+
+    // Compute raw tint layers
+    SetDayNightTintParams();
+    SetWeatherTintParams(gWeatherPtr->currWeather);
+    SetFogBlizzardTintParams(gWeatherPtr->currWeather);
+
+    // Combine into a single target tint
+    CombineTintLayers(&sTargetFinalTint,
+                      &sDayNightTint,
+                      &sWeatherTint,
+                      &sFogBlizzardTint);
+
+    // Detect tint change (weather or time)
+    if (!TintParamsEqual(&sTargetFinalTint, &sCurrFinalTint))
+    {
+        sPrevFinalTint = sCurrFinalTint;
+        sTintLerpFrame = 0;
+    }
+
+    // Compute lerp factor
+    t = (float)sTintLerpFrame / (float)sTintLerpMax;
+    if (t > 1.0f)
+        t = 1.0f;
+
+    // Lerp into current tint
+    LerpFinalTint(&sCurrFinalTint, &sPrevFinalTint, &sTargetFinalTint, t);
+
+    // Advance frame counter
+    if (sTintLerpFrame < sTintLerpMax)
+        sTintLerpFrame++;
+
+    // BG palettes
+    for (i = 0; i < 16 * 16; i++)
+    {
+        Color base;
+        c = *(Color *)&gPlttBufferUnfaded[i];
+        ApplyTintToColor(&c, &sCurrFinalTint);
+        gPlttBufferFaded[i] = *(u16 *)&c;
+    }
+
+    // OBJ palettes (skip UI)
+    for (i = 16 * 16; i < 32 * 16; i++)
+    {
+        palIndex = i / 16;
+        if (palIndex >= 28 && palIndex <= 31)
+            continue;
+
+        c = *(Color *)&gPlttBufferUnfaded[i];
+        ApplyTintToColor(&c, &sCurrFinalTint);
+        gPlttBufferFaded[i] = *(u16 *)&c;
+    }
+}
+
+
+
 struct Weather *const gWeatherPtr = &sWeather;
 
-static const struct WeatherCallbacks sWeatherFuncs[] =
-{
-    // 0 — NONE (indoors only)
-    [WEATHER_NONE] =
-        { None_Init, None_Main, None_Init, None_Finish },
-
-    // 1 — SUNNY_CLOUDS (unused vanilla)
-    [WEATHER_SUNNY_CLOUDS] =
-        { Clouds_InitVars, Clouds_Main, Clouds_InitAll, Clouds_Finish },
-
-    // 2 — SUNNY
-    [WEATHER_SUNNY] =
-        { Sunny_InitVars, Sunny_Main, Sunny_InitAll, Sunny_Finish },
-
-    // 3 — RAIN
-    [WEATHER_RAIN] =
-        { Rain_InitVars, Rain_Main, Rain_InitAll, Rain_Finish },
-
-    // 4 — SNOW (vanilla snow/hail effect)
-    [WEATHER_SNOW] =
-        { Snow_InitVars, Snow_Main, Snow_InitAll, Snow_Finish },
-
-    // 5 — THUNDERSTORM
-    [WEATHER_RAIN_THUNDERSTORM] =
-        { Thunderstorm_InitVars, Thunderstorm_Main, Thunderstorm_InitAll, Thunderstorm_Finish },
-
-    // 6 — FOG_HORIZONTAL (vanilla fog)
-    [WEATHER_FOG_HORIZONTAL] =
-        { FogHorizontal_InitVars, FogHorizontal_Main, FogHorizontal_InitAll, FogHorizontal_Finish },
-
-    // 7 — VOLCANIC ASH
-    [WEATHER_VOLCANIC_ASH] =
-        { Ash_InitVars, Ash_Main, Ash_InitAll, Ash_Finish },
-
-    // 8 — SANDSTORM
-    [WEATHER_SANDSTORM] =
-        { Sandstorm_InitVars, Sandstorm_Main, Sandstorm_InitAll, Sandstorm_Finish },
-
-    // 9 — FOG_DIAGONAL (unused)
-    [WEATHER_FOG_DIAGONAL] =
-        { FogDiagonal_InitVars, FogDiagonal_Main, FogDiagonal_InitAll, FogDiagonal_Finish },
-
-    // 10 — UNDERWATER (unused)
-    [WEATHER_UNDERWATER] =
-        { None_Init, None_Main, None_Init, None_Finish },
-
-    // 11 — SHADE
-    [WEATHER_SHADE] =
-        { Shade_InitVars, Shade_Main, Shade_InitAll, Shade_Finish },
-
-    // 12 — DROUGHT (harsh sunlight)
-    [WEATHER_DROUGHT] =
-        { Drought_InitVars, Drought_Main, Drought_InitAll, Drought_Finish },
-
-    // 13 — DOWNPOUR (heavy rain)
-    [WEATHER_DOWNPOUR] =
-        { Downpour_InitVars, Thunderstorm_Main, Downpour_InitAll, Thunderstorm_Finish },
-
-    // 14 — UNDERWATER_BUBBLES (unused)
-    [WEATHER_UNDERWATER_BUBBLES] =
-        { Bubbles_InitVars, Bubbles_Main, Bubbles_InitAll, Bubbles_Finish },
-
-    // ---------------------------------------------------------
-    // CUSTOM WEATHER TYPES (your additions)
-    // ---------------------------------------------------------
-
-    // 22 — BLIZZARD (hail + fog overlay)
-    [WEATHER_BLIZZARD] =
-        { Snow_InitVars, Snow_Main, Snow_InitAll, Snow_Finish },
-
-    // 23 — CLEAR (slightly brighter than NONE)
-    [WEATHER_CLEAR] =
-        { Sunny_InitVars, Sunny_Main, Sunny_InitAll, Sunny_Finish },
-
-    // 24 — HAIL (same as snow effect)
-    [WEATHER_HAIL] =
-        { Snow_InitVars, Snow_Main, Snow_InitAll, Snow_Finish },
-
-    // 25 — EXTREME SUN (your mythic sunlight)
-    [WEATHER_EXTREME_SUN] =
-        { Drought_InitVars, Drought_Main, Drought_InitAll, Drought_Finish },
-
-    // 26 — OVERCAST (clouds)
-    [WEATHER_OVERCAST] =
-        { Clouds_InitVars, Clouds_Main, Clouds_InitAll, Clouds_Finish },
-
-    // 27 — HEAVY RAIN (Kyogre-tier)
-    [WEATHER_HEAVY_RAIN] =
-        { Downpour_InitVars, Thunderstorm_Main, Downpour_InitAll, Thunderstorm_Finish },
-
-    // 28 — FOG (your custom fog weather)
-    [WEATHER_FOG] =
-        { FogHorizontal_InitVars, FogHorizontal_Main, FogHorizontal_InitAll, FogHorizontal_Finish },
+static const struct WeatherCallbacks sWeatherFuncs[] = {
+    {None_Init, None_Main, None_Init, None_Finish},
+    {Clouds_InitVars, Clouds_Main, Clouds_InitAll, Clouds_Finish},
+    {Sunny_InitVars, Sunny_Main, Sunny_InitAll, Sunny_Finish},
+    {Rain_InitVars, Rain_Main, Rain_InitAll, Rain_Finish},
+    {Snow_InitVars, Snow_Main, Snow_InitAll, Snow_Finish},
+    {Thunderstorm_InitVars, Thunderstorm_Main, Thunderstorm_InitAll, Thunderstorm_Finish},
+    {FogHorizontal_InitVars, FogHorizontal_Main, FogHorizontal_InitAll, FogHorizontal_Finish},
+    {Ash_InitVars, Ash_Main, Ash_InitAll, Ash_Finish},
+    {Sandstorm_InitVars, Sandstorm_Main, Sandstorm_InitAll, Sandstorm_Finish},
+    {FogDiagonal_InitVars, FogDiagonal_Main, FogDiagonal_InitAll, FogDiagonal_Finish},
+    {FogHorizontal_InitVars, FogHorizontal_Main, FogHorizontal_InitAll, FogHorizontal_Finish},
+    {Shade_InitVars, Shade_Main, Shade_InitAll, Shade_Finish},
+    {Drought_InitVars, Drought_Main, Drought_InitAll, Drought_Finish},
+    {Downpour_InitVars, Thunderstorm_Main, Downpour_InitAll, Thunderstorm_Finish},
+    {Bubbles_InitVars, Bubbles_Main, Bubbles_InitAll, Bubbles_Finish},
 };
 
 static void (*const sWeatherPalStateFuncs[])(void) = {
@@ -250,6 +547,19 @@ void StartWeather(void)
 
 void SetNextWeather(u8 weather)
 {
+    // ============================
+    // NIGHT CORRECTION RULE
+    // ============================
+    int hour = GetCurrentHour(); // your RTC function
+    bool8 isNight = (hour < 6 || hour >= 18);
+
+    if (isNight)
+    {
+        if (weather == WEATHER_SUNNY || weather == WEATHER_EXTREME_SUN)
+            weather = WEATHER_CLEAR;
+    }
+    // ============================
+
     if (weather != WEATHER_RAIN && weather != WEATHER_RAIN_THUNDERSTORM && weather != WEATHER_DOWNPOUR)
     {
         PlayRainStoppingSoundEffect();

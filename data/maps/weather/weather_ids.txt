@@ -4,8 +4,7 @@
 
 ; High Mountain Summit Climate
 #define WEATHER_ID_ROUTE28              Y0
-#define WEATHER_ID_MTSILVER_EXTERIOR    Y0
-#define WEATHER_ID_MTSILVER_SUMMIT      Y0
+#define WEATHER_ID_MT_SILVER_SUMMIT     Y0
 
 ; Ice Cavern Climate (all Ice Path floors share)
 #define WEATHER_ID_ICEPATH_1F           Y1
@@ -37,11 +36,9 @@
 ; Ecruteak–Olivine Corridor
 #define WEATHER_ID_ROUTE42              X0
 #define WEATHER_ID_ECRUTEAKCITY         X0
-
-; Burned Tower Exposed Floor
 #define WEATHER_ID_BURNEDTOWER_1F       X0
 
-
+; Peachwood Town
 #define WEATHER_ID_PEACHWOODTOWN        X1
 
 ; Western Plains (Routes 38–39)
@@ -52,11 +49,8 @@
 #define WEATHER_ID_OLIVINECITY          X3
 #define WEATHER_ID_ROUTE40              X3
 
-; Whirl Islands Exterior + Route 41
-#define WEATHER_ID_WHIRLISLANDS_EXT     X4
+; CIANWOOD + Route 41
 #define WEATHER_ID_ROUTE41              X4
-
-; Cianwood Coast
 #define WEATHER_ID_CIANWOODCITY         X4
 #define WEATHER_ID_CIANWOOD_GYM         X4
 
@@ -67,7 +61,7 @@
 ; Custom Western Maps
 #define WEATHER_ID_ROUTE49              X6
 #define WEATHER_ID_ROUTE50              X7
-#define WEATHER_ID_BLEAKRESTCOVE        X8
+#define WEATHER_ID_BLEAKRESTCOVE_ENTRANCE X8
 #define WEATHER_ID_OBSIDIANCITY         X7
 
 
@@ -100,19 +94,21 @@
 
 ; National Park + Routes 35–37
 #define WEATHER_ID_ROUTE35              Z6
-#define WEATHER_ID_NATIONALPARK         Z6
+#define WEATHER_ID_NATIONAL_PARK         Z6
+#define WEATHER_ID_NATIONAL_PARK_BUG_CONTEST Z6
 #define WEATHER_ID_ROUTE36              Z6
 #define WEATHER_ID_ROUTE37              Z6
 
 ; Ruins of Alph Exterior
-#define WEATHER_ID_RUINSOFALPH_EXT      Z7
+#define WEATHER_ID_RUINSOFALPH_ENTRANCE Z7
 
 ; Route 46 (Johto South side)
 #define WEATHER_ID_ROUTE46              Z8
 
 ; Cherrygrove + Route30
 #define WEATHER_ID_ROUTE30              Z9
-#define WEATHER_ID_CHERRYGROVECITY      Z9
+#define WEATHER_ID_CHERRYGROVE_CITY     Z9
+
 
 
 ; ============================================================
@@ -120,18 +116,19 @@
 ; ============================================================
 
 ; Viridian → Pallet Corridor
-#define WEATHER_ID_VIRIDIANCITY         C0
+#define WEATHER_ID_VIRIDIAN_CITY        C0
 #define WEATHER_ID_ROUTE1               C0
-#define WEATHER_ID_PALLETTOWN           C0
+#define WEATHER_ID_PALLET_TOWN          C0
 
 ; Pallet → Cinnabar Sea Route
-#define WEATHER_ID_ROUTE21              C1
+#define WEATHER_ID_ROUTE21_NORTH        C1
+#define WEATHER_ID_ROUTE21_SOUTH        C1
 #define WEATHER_ID_ROUTE20              C1
-#define WEATHER_ID_CINNABARISLAND       C1
+#define WEATHER_ID_CINNABAR_ISLAND      C1
 
 ; Fuchsia Coast
 #define WEATHER_ID_ROUTE19              C2
-#define WEATHER_ID_FUCHSIACITY          C2
+#define WEATHER_ID_FUCHSIA_CITY         C2
 
 ; Eastern Coastline (Routes 13–15)
 #define WEATHER_ID_ROUTE13              C3
@@ -143,7 +140,7 @@
 
 ; Vermilion Coast
 #define WEATHER_ID_ROUTE11              C5
-#define WEATHER_ID_VERMILIONCITY        C5
+#define WEATHER_ID_VERMILION_CITY       C5
 #define WEATHER_ID_ROUTE6               C5
 
 ; Cycling Road (Routes 16–18)
@@ -151,11 +148,11 @@
 #define WEATHER_ID_ROUTE17              C6
 #define WEATHER_ID_ROUTE18              C6
 
-; Seafoam Exterior
-#define WEATHER_ID_SEAFOAM_EXT          C7
-
 ; Safari Zone Exterior
-#define WEATHER_ID_SAFARIZONE_EXT       C8
+#define WEATHER_ID_SAFARI_ZONE_CENTER   C3
+#define WEATHER_ID_SAFARI_ZONE_EAST     C4
+#define WEATHER_ID_SAFARI_ZONE_NORTH    C5
+#define WEATHER_ID_SAFARI_ZONE_WEST     C6
 
 
 
@@ -164,73 +161,77 @@
 ; ============================================================
 
 ; Pewter Region
-#define WEATHER_ID_PEWTERCITY           I0
+#define WEATHER_ID_PEWTER_CITY          I0
 #define WEATHER_ID_ROUTE2               I0
 #define WEATHER_ID_ROUTE3               I0
 
 ; Viridian Forest
-#define WEATHER_ID_VIRIDIANFOREST       I7
+#define WEATHER_ID_VIRIDIAN_FOREST      I7
+
 ; Cerulean Region
-#define WEATHER_ID_CERULEANCITY         I1
+#define WEATHER_ID_CERULEAN_CITY        I1
 #define WEATHER_ID_ROUTE4               I1
 #define WEATHER_ID_ROUTE24              I1
 #define WEATHER_ID_ROUTE25              I1
-#define WEATHER_ID_CERULEANCAPE         I1
 
 ; Saffron Region
-#define WEATHER_ID_SAFFRONCITY          I2
+#define WEATHER_ID_SAFFRON_CITY         I2
 #define WEATHER_ID_ROUTE5               I2
 #define WEATHER_ID_ROUTE8               I2
 
 ; Celadon Region
-#define WEATHER_ID_CELADONCITY          I3
+#define WEATHER_ID_CELADON_CITY         I3
 #define WEATHER_ID_ROUTE7               I3
 
 ; Lavender Region
-#define WEATHER_ID_LAVENDERTOWN         I4
+#define WEATHER_ID_LAVENDER_TOWN        I4
 #define WEATHER_ID_ROUTE10              I4
 
 ; Route 9 / Power Plant Exterior
 #define WEATHER_ID_ROUTE9               I5
-#define WEATHER_ID_POWERPLANT_EXT       I5
-#define WEATHER_ID_ROCKTUNNEL_EXT       I5
+#define WEATHER_ID_POWER_PLANT          I5
+#define WEATHER_ID_ROCK_TUNNEL_1F       I5
 
 ; Victory Road / Indigo Plateau
 #define WEATHER_ID_ROUTE22              I6
 #define WEATHER_ID_ROUTE23              I6
-#define WEATHER_ID_INDIGOPLATEAU_EXT    I6
+#define WEATHER_ID_INDIGO_PLATEAU_EXTERIOR I6
 
-; Pokemon Tower
-#define WEATHER_ID_POKEMONTOWER         I8
+; Pokemon Tower Exterior
+#define WEATHER_ID_POKEMON_TOWER        I8
+
+
 
 ; ============================================================
 ; =================== SEVII ISLANDS 1–3 =======================
 ; ============================================================
 
 ; One Island
-#define WEATHER_ID_ONEISLAND            S0
-#define WEATHER_ID_KINDLEROAD           S0
-#define WEATHER_ID_TREASUREBEACH        S0
+#define WEATHER_ID_ONE_ISLAND                   S0
+#define WEATHER_ID_ONE_ISLAND_KINDLE_ROAD       S0
+#define WEATHER_ID_ONE_ISLAND_TREASURE_BEACH    S0
 
 ; Mt Ember Exterior
-#define WEATHER_ID_MTEMBER_EXT          S1
+#define WEATHER_ID_MT_EMBER_EXTERIOR            S1
 
 ; Two Island
-#define WEATHER_ID_TWOISLAND            S2
-#define WEATHER_ID_CAPEBRINK            S2
+#define WEATHER_ID_TWO_ISLAND                   S2
+#define WEATHER_ID_TWO_ISLAND_CAPE_BRINK        S2
 
 ; Three Island
-#define WEATHER_ID_THREEISLAND          S3
-#define WEATHER_ID_BONDBRIDGE           S3
-#define WEATHER_ID_BERRYFOREST          S3
+#define WEATHER_ID_THREE_ISLAND                 S3
+#define WEATHER_ID_THREE_ISLAND_BOND_BRIDGE     S3
+#define WEATHER_ID_THREE_ISLAND_BERRY_FOREST    S3
 
-; Water Labyrinth / Resort Gorgeous
-#define WEATHER_ID_WATERLABYRINTH       S4
-#define WEATHER_ID_RESORTGORGEOUS       S4
+; Water Labyrinth / Resort Gorgeous / Meadow
+#define WEATHER_ID_FIVE_ISLAND_WATER_LABYRINTH  S4
+#define WEATHER_ID_FIVE_ISLAND_RESORT_GORGEOUS  S4
+#define WEATHER_ID_FIVE_ISLAND_MEADOW           S4
 
 ; Birth Island (Event Island)
-#define WEATHER_ID_BIRTHISLAND_EXT      S5
-#define WEATHER_ID_BIRTHISLAND_HARBOR   S5
+#define WEATHER_ID_BIRTH_ISLAND_EXTERIOR        S5
+#define WEATHER_ID_BIRTH_ISLAND_HARBOR          S5
+
 
 
 ; ============================================================
@@ -238,29 +239,28 @@
 ; ============================================================
 
 ; Four Island
-#define WEATHER_ID_FOURISLAND           V0
-#define WEATHER_ID_ICEFALLCAVE_EXT      V0
+#define WEATHER_ID_FOUR_ISLAND                      V0
+#define WEATHER_ID_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE V0
 
 ; Five Island
-#define WEATHER_ID_FIVEISLAND           V1
-#define WEATHER_ID_MEMORIALPILLAR       V1
-#define WEATHER_ID_RESORTAREA           V1
+#define WEATHER_ID_FIVE_ISLAND                      V1
+#define WEATHER_ID_FIVE_ISLAND_MEMORIAL_PILLAR      V1
+#define WEATHER_ID_FIVE_ISLAND_RESORT_GORGEOUS      V1
 
 ; Six Island
-#define WEATHER_ID_SIXISLAND            V2
-#define WEATHER_ID_PATTERNBUSH          V2
-#define WEATHER_ID_RUINVALLEY           V2
+#define WEATHER_ID_SIX_ISLAND                       V2
+#define WEATHER_ID_SIX_ISLAND_PATTERN_BUSH          V2
+#define WEATHER_ID_SIX_ISLAND_RUIN_VALLEY           V2
 
 ; Seven Island
-#define WEATHER_ID_SEVENISLAND          V3
-#define WEATHER_ID_SEVAULTCANYON        V3
-#define WEATHER_ID_TANOBYRUINS_EXT      V3
+#define WEATHER_ID_SEVEN_ISLAND                     V3
+#define WEATHER_ID_SEVEN_ISLAND_SEVAULT_CANYON      V3
+#define WEATHER_ID_SEVEN_ISLAND_TANOBY_RUINS        V3
 
 ; Trainer Tower Exterior
-#define WEATHER_ID_TRAINERTOWER_EXT     V4
+#define WEATHER_ID_SEVEN_ISLAND_TRAINER_TOWER       V4
 
 ; Navel Rock (Event Island)
-#define WEATHER_ID_NAVELROCK_EXT        V5
-#define WEATHER_ID_NAVELROCK_HARBOR     V5
-#define WEATHER_ID_NAVELROCK_SUMMIT     V5
-
+#define WEATHER_ID_NAVEL_ROCK_EXTERIOR              V5
+#define WEATHER_ID_NAVEL_ROCK_HARBOR                V5
+#define WEATHER_ID_NAVEL_ROCK_SUMMIT                V5

@@ -11,6 +11,44 @@
 #include "task.h"
 #include "trig.h"
 
+// Custom weather prototypes
+void Blizzard_InitVars(void);
+void Blizzard_InitAll(void);
+void Blizzard_Main(void);
+bool8 Blizzard_Finish(void);
+
+void Clear_InitVars(void);
+void Clear_InitAll(void);
+void Clear_Main(void);
+bool8 Clear_Finish(void);
+
+void Hail_InitVars(void);
+void Hail_InitAll(void);
+void Hail_Main(void);
+bool8 Hail_Finish(void);
+
+void ExtremeSun_InitVars(void);
+void ExtremeSun_InitAll(void);
+void ExtremeSun_Main(void);
+bool8 ExtremeSun_Finish(void);
+
+void Overcast_InitVars(void);
+void Overcast_InitAll(void);
+void Overcast_Main(void);
+bool8 Overcast_Finish(void);
+
+void HeavyRain_InitVars(void);
+void HeavyRain_InitAll(void);
+void HeavyRain_Main(void);
+bool8 HeavyRain_Finish(void);
+
+void Fog_InitVars(void);
+void Fog_InitAll(void);
+void Fog_Main(void);
+bool8 Fog_Finish(void);
+
+
+
 //------------------------------------------------------------------------------
 // WEATHER_SUNNY_CLOUDS
 //------------------------------------------------------------------------------
@@ -1710,6 +1748,11 @@ void FogDiagonal_Main(void)
             break;
         gWeatherPtr->weatherGfxLoaded = TRUE;
         gWeatherPtr->initStep++;
+
+        Snow_InitAll();
+        break;
+    default:
+        Snow_Main();
         break;
     }
 }
@@ -2344,3 +2387,283 @@ static void UpdateBubbleSprite(struct Sprite *sprite)
 #undef tScrollXCounter
 #undef tScrollXDir
 #undef tCounter
+
+
+/* ========================================================================== */
+/*  CUSTOM WEATHER TYPES                                                      */
+/* ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+/*  WEATHER_CLEAR – slightly brighter than NONE                               */
+/* -------------------------------------------------------------------------- */
+
+void Clear_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = TRUE;
+    gWeatherPtr->gammaTargetIndex = 1;   // slightly brighter
+    gWeatherPtr->gammaStepDelay = 20;
+}
+
+void Clear_InitAll(void)
+{
+    Clear_InitVars();
+}
+
+void Clear_Main(void)
+{
+    // Nothing to animate
+}
+
+bool8 Clear_Finish(void)
+{
+    return FALSE;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*  WEATHER_OVERCAST – dimmer, cloudier                                       */
+/* -------------------------------------------------------------------------- */
+
+void Overcast_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = TRUE;
+    gWeatherPtr->gammaTargetIndex = 2;   // slightly dimmer
+    gWeatherPtr->gammaStepDelay = 20;
+}
+
+void Overcast_InitAll(void)
+{
+    Overcast_InitVars();
+}
+
+void Overcast_Main(void)
+{
+    // No sprite system needed
+}
+
+bool8 Overcast_Finish(void)
+{
+    return FALSE;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*  WEATHER_EXTREME_SUN – stronger than Drought                               */
+/* -------------------------------------------------------------------------- */
+
+void ExtremeSun_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = TRUE;
+
+    // Drought uses -6 (dummied), so we use a stronger positive gamma
+    gWeatherPtr->gammaTargetIndex = 5;   // very bright
+    gWeatherPtr->gammaStepDelay = 20;
+
+    Weather_SetBlendCoeffs(0, 0);        // no fog/sand overlay
+}
+
+void ExtremeSun_InitAll(void)
+{
+    ExtremeSun_InitVars();
+}
+
+void ExtremeSun_Main(void)
+{
+    // No sprite system
+}
+
+bool8 ExtremeSun_Finish(void)
+{
+    return FALSE;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*  WEATHER_HEAVY_RAIN – denser, darker rain                                  */
+/* -------------------------------------------------------------------------- */
+
+void HeavyRain_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+
+    // Downpour uses gamma 3; Heavy Rain is darker
+    gWeatherPtr->gammaTargetIndex = 4;
+    gWeatherPtr->gammaStepDelay = 20;
+
+    // Increase rain density
+    gWeatherPtr->rainSpriteCount = 0;
+    gWeatherPtr->targetRainSpriteCount = 48; // denser than downpour
+}
+
+void HeavyRain_InitAll(void)
+{
+    HeavyRain_InitVars();
+    while (!gWeatherPtr->weatherGfxLoaded)
+        Thunderstorm_Main(); // same main loop as downpour
+}
+
+void HeavyRain_Main(void)
+{
+    Thunderstorm_Main(); // reuse thunderstorm movement
+}
+
+bool8 HeavyRain_Finish(void)
+{
+    return Thunderstorm_Finish();
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*  WEATHER_HAIL – snow-like but colder                                       */
+/* -------------------------------------------------------------------------- */
+
+void Hail_InitVars(void)
+{
+    Snow_InitVars();
+    gWeatherPtr->gammaTargetIndex = 2;   // slightly darker than snow
+}
+
+void Hail_InitAll(void)
+{
+    Hail_InitVars();
+    Snow_InitAll();
+}
+
+void Hail_Main(void)
+{
+    Snow_Main();
+}
+
+bool8 Hail_Finish(void)
+{
+    return Snow_Finish();
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*  WEATHER_FOG – horizontal fog                                               */
+/* -------------------------------------------------------------------------- */
+
+void Fog_InitVars(void)
+{
+    FogHorizontal_InitVars();
+    gWeatherPtr->gammaTargetIndex = 1;   // slight brighten + fog blend
+}
+
+void Fog_InitAll(void)
+{
+    Fog_InitVars();
+    FogHorizontal_InitAll();
+}
+
+void Fog_Main(void)
+{
+    FogHorizontal_Main();
+}
+
+bool8 Fog_Finish(void)
+{
+    return FogHorizontal_Finish();
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*  WEATHER_BLIZZARD – snow + fog diagonal overlay                             */
+/* -------------------------------------------------------------------------- */
+
+void Blizzard_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+
+    // Slightly darker than snow
+    gWeatherPtr->gammaTargetIndex = 2;
+    gWeatherPtr->gammaStepDelay = 20;
+
+    /* Snow system */
+    gWeatherPtr->targetSnowflakeSpriteCount = 16;
+    gWeatherPtr->snowflakeVisibleCounter = 0;
+
+    /* FogDiagonal system */
+    gWeatherPtr->fogHScrollCounter = 0;
+    gWeatherPtr->fogHScrollOffset = 1;
+    gWeatherPtr->fogDScrollXCounter = 0;
+    gWeatherPtr->fogDScrollYCounter = 0;
+    gWeatherPtr->fogDXOffset = 0;
+    gWeatherPtr->fogDYOffset = 0;
+    gWeatherPtr->fogDBaseSpritesX = 0;
+    gWeatherPtr->fogDPosY = 0;
+
+    Weather_SetBlendCoeffs(0, 16);
+}
+
+void Blizzard_InitAll(void)
+{
+    u16 i;
+
+    Blizzard_InitVars();
+
+    while (!gWeatherPtr->weatherGfxLoaded)
+    {
+        Blizzard_Main();
+
+        for (i = 0; i < gWeatherPtr->snowflakeSpriteCount; i++)
+            UpdateSnowflakeSprite(gWeatherPtr->sprites.s1.snowflakeSprites[i]);
+    }
+}
+
+void Blizzard_Main(void)
+{
+    UpdateFogDiagonalMovement();
+
+    switch (gWeatherPtr->initStep)
+    {
+    case 0:
+        CreateFogDiagonalSprites();
+        gWeatherPtr->initStep++;
+        break;
+
+    case 1:
+        if (!UpdateVisibleSnowflakeSprites())
+        {
+            Weather_SetTargetBlendCoeffs(12, 8, 8);
+            gWeatherPtr->initStep++;
+        }
+        break;
+
+    case 2:
+        if (!Weather_UpdateBlend())
+            break;
+
+        gWeatherPtr->weatherGfxLoaded = TRUE;
+        gWeatherPtr->initStep++;
+        break;
+    }
+}
+
+bool8 Blizzard_Finish(void)
+{
+    switch (gWeatherPtr->finishStep)
+    {
+    case 0:
+        gWeatherPtr->targetSnowflakeSpriteCount = 0;
+        gWeatherPtr->snowflakeVisibleCounter = 0;
+        Weather_SetTargetBlendCoeffs(0, 16, 16);
+        gWeatherPtr->finishStep++;
+        // fallthrough
+
+    case 1:
+        if (!UpdateVisibleSnowflakeSprites() && !Weather_UpdateBlend())
+        {
+            gWeatherPtr->finishStep++;
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+    return FALSE;
+}

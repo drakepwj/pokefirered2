@@ -43,6 +43,12 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 
+#include "field_weather.h"
+#include "constants/weather.h"
+
+
+
+
 static void SpriteCB_UnusedDebugSprite(struct Sprite *sprite);
 static void HandleAction_UseMove(void);
 static void HandleAction_Switch(void);
@@ -2245,6 +2251,55 @@ static void BattleStartClearSetData(void)
     gBattlerAttacker = 0;
     gBattlerTarget = 0;
     gBattleWeather = 0;
+
+
+// --- CUSTOM: Initialize battle weather from overworld weather ---
+{
+    u8 owWeather = GetSav1Weather();
+
+    switch (owWeather)
+    {
+    case WEATHER_RAIN:
+        gBattleWeather = B_WEATHER_RAIN_TEMPORARY | B_WEATHER_RAIN_PERMANENT;
+        break;
+
+    case WEATHER_HEAVY_RAIN:
+        gBattleWeather = B_WEATHER_RAIN_TEMPORARY | B_WEATHER_RAIN_PERMANENT;
+        break;
+
+    case WEATHER_SUNNY:
+        gBattleWeather = B_WEATHER_SUN_TEMPORARY | B_WEATHER_SUN_PERMANENT;
+        break;
+
+    case WEATHER_EXTREME_SUN:
+        gBattleWeather = B_WEATHER_SUN_TEMPORARY | B_WEATHER_SUN_PERMANENT;
+        break;
+
+    case WEATHER_SANDSTORM:
+        gBattleWeather = B_WEATHER_SANDSTORM_TEMPORARY | B_WEATHER_SANDSTORM_PERMANENT;
+        break;
+
+    case WEATHER_SNOW:
+    case WEATHER_HAIL:
+        gBattleWeather = B_WEATHER_HAIL_TEMPORARY | B_WEATHER_HAIL_PERMANENT;
+        break;
+
+    case WEATHER_BLIZZARD:
+        gBattleWeather = B_WEATHER_HAIL_TEMPORARY | B_WEATHER_HAIL_PERMANENT;
+        gBattleStruct->blizzardFogActive = TRUE;  // your fog accuracy effect
+        break;
+
+    case WEATHER_FOG_HORIZONTAL:
+    case WEATHER_FOG_DIAGONAL:
+        gBattleStruct->blizzardFogActive = TRUE;
+        break;
+
+    default:
+        break;
+    }
+}
+// --- END CUSTOM ---
+
 
     dataPtr = (u8 *)&gWishFutureKnock;
     for (i = 0; i < sizeof(struct WishFutureKnock); i++)

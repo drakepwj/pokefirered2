@@ -16,6 +16,11 @@
 #include "save_failed_screen.h"
 #include "quest_log.h"
 
+#include <string.h>
+#include <time.h>
+
+
+
 extern u32 intr_main[];
 
 static void VBlankIntr(void);

@@ -26,6 +26,8 @@
 #include "constants/battle_move_effects.h"
 #include "constants/battle_script_commands.h"
 
+#include "field_weather.h"
+
 #define SOUND_MOVES_END 0xFFFF
 
 static const u16 sSoundMovesTable[] =
@@ -622,6 +624,17 @@ u8 DoFieldEndTurnEffects(void)
             }
             break;
         case ENDTURN_RAIN:
+// --- CUSTOM: Heavy Rain continuation message ---
+if (GetSav1Weather() == WEATHER_HEAVY_RAIN)
+{
+    gBattleCommunication[MULTISTRING_CHOOSER] = (u8)STRINGID_HEAVYRAIN;
+    BattleScriptExecute(BattleScript_HeavyRainContinues);
+    effect++;
+    gBattleStruct->turnCountersTracker++;
+    break;
+}
+// --- END CUSTOM ---
+
             if (gBattleWeather & B_WEATHER_RAIN)
             {
                 if (!(gBattleWeather & B_WEATHER_RAIN_PERMANENT))
@@ -672,6 +685,17 @@ u8 DoFieldEndTurnEffects(void)
             gBattleStruct->turnCountersTracker++;
             break;
         case ENDTURN_SUN:
+// --- CUSTOM: Extreme Sun continuation message ---
+if (GetSav1Weather() == WEATHER_EXTREME_SUN)
+{
+    gBattleCommunication[MULTISTRING_CHOOSER] = (u8)STRINGID_EXTREMESUN;
+    BattleScriptExecute(BattleScript_ExtremeSunContinues);
+    effect++;
+    gBattleStruct->turnCountersTracker++;
+    break;
+}
+// --- END CUSTOM ---
+
             if (gBattleWeather & B_WEATHER_SUN)
             {
                 if (!(gBattleWeather & B_WEATHER_SUN_PERMANENT) && --gWishFutureKnock.weatherDuration == 0)
@@ -692,7 +716,8 @@ u8 DoFieldEndTurnEffects(void)
         case ENDTURN_HAIL:
             if (gBattleWeather & B_WEATHER_HAIL)
             {
-                if (--gWishFutureKnock.weatherDuration == 0)
+                 if (!(gBattleWeather & B_WEATHER_HAIL_PERMANENT) 
+                    && --gWishFutureKnock.weatherDuration == 0)
                 {
                     gBattleWeather &= ~B_WEATHER_HAIL_TEMPORARY;
                     gBattlescriptCurrInstr = BattleScript_SandStormHailEnds;

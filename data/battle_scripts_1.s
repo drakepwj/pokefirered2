@@ -20,6 +20,8 @@
 	.section script_data, "aw", %progbits
 	.align 2
 
+
+
 gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit                    @ EFFECT_HIT
 	.4byte BattleScript_EffectSleep                  @ EFFECT_SLEEP
@@ -3155,6 +3157,27 @@ BattleScript_RainContinuesOrEnds::
 BattleScript_RainContinuesOrEndsEnd::
 	end2
 
+
+
+    .global BattleScript_HeavyRainContinues
+BattleScript_HeavyRainContinues::
+    printstring 0xFD
+    waitmessage B_WAIT_TIME_LONG
+    end2
+
+    .global BattleScript_ExtremeSunContinues
+BattleScript_ExtremeSunContinues::
+    printstring 0xFD
+    waitmessage B_WAIT_TIME_LONG
+    end2
+
+
+
+
+
+
+
+
 BattleScript_DamagingWeatherContinues::
 	printfromtable gSandstormHailContinuesStringIds
 	waitmessage B_WAIT_TIME_LONG
@@ -4380,3 +4403,9 @@ BattleScript_ActionSelectionItemsCantBeUsed::
 BattleScript_FlushMessageBox::
 	printstring STRINGID_EMPTYSTRING3
 	return
+
+
+BattleScript_FogAccuracyMessage::
+    printstring STRINGID_FOGREDUCESACCURACY
+    return
+

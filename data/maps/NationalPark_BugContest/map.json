@@ -3,7 +3,7 @@
   "name": "NationalPark_BugContest",
   "layout": "LAYOUT_NATIONAL_PARK_BUGCONTEST",
   "music": "MUS_EVOLUTION",
-  "region_map_section": "MAPSEC_NATIONAL_PARK",
+  "region_map_section": "MAPSEC_PETALBURG_WOODS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -15,7 +15,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "coord_events": [],
   "warp_events": [],
+  "coord_events": [],
   "bg_events": []
 }

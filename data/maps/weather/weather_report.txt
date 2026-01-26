@@ -1,0 +1,731 @@
+Weather System Report
+=====================
+
+Source: /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+Map groups: /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h
+Weather tables: /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_tables.inc
+
+Clusters and maps:
+------------------
+
+Cluster C0:
+  MAP_PALLET_TOWN  (group=3, num=0)  <- WEATHER_ID_PALLET_TOWN
+  MAP_ROUTE1  (group=3, num=19)  <- WEATHER_ID_ROUTE1
+  MAP_VIRIDIAN_CITY  (group=3, num=1)  <- WEATHER_ID_VIRIDIAN_CITY
+
+Cluster C1:
+  MAP_CINNABAR_ISLAND  (group=3, num=8)  <- WEATHER_ID_CINNABAR_ISLAND
+  MAP_ROUTE20  (group=3, num=38)  <- WEATHER_ID_ROUTE20
+  MAP_ROUTE21_NORTH  (group=3, num=39)  <- WEATHER_ID_ROUTE21_NORTH
+  MAP_ROUTE21_SOUTH  (group=3, num=40)  <- WEATHER_ID_ROUTE21_SOUTH
+
+Cluster C2:
+  MAP_FUCHSIA_CITY  (group=3, num=7)  <- WEATHER_ID_FUCHSIA_CITY
+  MAP_ROUTE19  (group=3, num=37)  <- WEATHER_ID_ROUTE19
+
+Cluster C3:
+  MAP_ROUTE13  (group=3, num=31)  <- WEATHER_ID_ROUTE13
+  MAP_ROUTE14  (group=3, num=32)  <- WEATHER_ID_ROUTE14
+  MAP_ROUTE15  (group=3, num=33)  <- WEATHER_ID_ROUTE15
+  MAP_SAFARI_ZONE_CENTER  (group=1, num=63)  <- WEATHER_ID_SAFARI_ZONE_CENTER
+
+Cluster C4:
+  MAP_ROUTE12  (group=3, num=30)  <- WEATHER_ID_ROUTE12
+  MAP_SAFARI_ZONE_EAST  (group=1, num=64)  <- WEATHER_ID_SAFARI_ZONE_EAST
+
+Cluster C5:
+  MAP_ROUTE11  (group=3, num=29)  <- WEATHER_ID_ROUTE11
+  MAP_ROUTE6  (group=3, num=24)  <- WEATHER_ID_ROUTE6
+  MAP_SAFARI_ZONE_NORTH  (group=1, num=65)  <- WEATHER_ID_SAFARI_ZONE_NORTH
+  MAP_VERMILION_CITY  (group=3, num=5)  <- WEATHER_ID_VERMILION_CITY
+
+Cluster C6:
+  MAP_ROUTE16  (group=3, num=34)  <- WEATHER_ID_ROUTE16
+  MAP_ROUTE17  (group=3, num=35)  <- WEATHER_ID_ROUTE17
+  MAP_ROUTE18  (group=3, num=36)  <- WEATHER_ID_ROUTE18
+  MAP_SAFARI_ZONE_WEST  (group=1, num=66)  <- WEATHER_ID_SAFARI_ZONE_WEST
+
+Cluster I0:
+  MAP_PEWTER_CITY  (group=3, num=2)  <- WEATHER_ID_PEWTER_CITY
+  MAP_ROUTE2  (group=3, num=20)  <- WEATHER_ID_ROUTE2
+  MAP_ROUTE3  (group=3, num=21)  <- WEATHER_ID_ROUTE3
+
+Cluster I1:
+  MAP_CERULEAN_CITY  (group=3, num=3)  <- WEATHER_ID_CERULEAN_CITY
+  MAP_ROUTE24  (group=3, num=43)  <- WEATHER_ID_ROUTE24
+  MAP_ROUTE25  (group=3, num=44)  <- WEATHER_ID_ROUTE25
+  MAP_ROUTE4  (group=3, num=22)  <- WEATHER_ID_ROUTE4
+
+Cluster I2:
+  MAP_ROUTE5  (group=3, num=23)  <- WEATHER_ID_ROUTE5
+  MAP_ROUTE8  (group=3, num=26)  <- WEATHER_ID_ROUTE8
+  MAP_SAFFRON_CITY  (group=3, num=10)  <- WEATHER_ID_SAFFRON_CITY
+
+Cluster I3:
+  MAP_CELADON_CITY  (group=3, num=6)  <- WEATHER_ID_CELADON_CITY
+  MAP_ROUTE7  (group=3, num=25)  <- WEATHER_ID_ROUTE7
+
+Cluster I4:
+  MAP_LAVENDER_TOWN  (group=3, num=4)  <- WEATHER_ID_LAVENDER_TOWN
+  MAP_ROUTE10  (group=3, num=28)  <- WEATHER_ID_ROUTE10
+
+Cluster I5:
+  MAP_POWER_PLANT  (group=1, num=95)  <- WEATHER_ID_POWER_PLANT
+  MAP_ROCK_TUNNEL_1F  (group=1, num=81)  <- WEATHER_ID_ROCK_TUNNEL_1F
+  MAP_ROUTE9  (group=3, num=27)  <- WEATHER_ID_ROUTE9
+
+Cluster I6:
+  MAP_INDIGO_PLATEAU_EXTERIOR  (group=3, num=9)  <- WEATHER_ID_INDIGO_PLATEAU_EXTERIOR
+  MAP_ROUTE22  (group=3, num=41)  <- WEATHER_ID_ROUTE22
+  MAP_ROUTE23  (group=3, num=42)  <- WEATHER_ID_ROUTE23
+
+Cluster I7:
+  MAP_VIRIDIAN_FOREST  (group=1, num=0)  <- WEATHER_ID_VIRIDIAN_FOREST
+
+Cluster I8:
+  MAP_POKEMON_TOWER  (group=?, num=?)  <- WEATHER_ID_POKEMON_TOWER
+
+Cluster S0:
+  MAP_ONE_ISLAND  (group=3, num=12)  <- WEATHER_ID_ONE_ISLAND
+  MAP_ONE_ISLAND_KINDLE_ROAD  (group=3, num=45)  <- WEATHER_ID_ONE_ISLAND_KINDLE_ROAD
+  MAP_ONE_ISLAND_TREASURE_BEACH  (group=3, num=46)  <- WEATHER_ID_ONE_ISLAND_TREASURE_BEACH
+
+Cluster S1:
+  MAP_MT_EMBER_EXTERIOR  (group=1, num=97)  <- WEATHER_ID_MT_EMBER_EXTERIOR
+
+Cluster S2:
+  MAP_TWO_ISLAND  (group=3, num=13)  <- WEATHER_ID_TWO_ISLAND
+  MAP_TWO_ISLAND_CAPE_BRINK  (group=3, num=47)  <- WEATHER_ID_TWO_ISLAND_CAPE_BRINK
+
+Cluster S3:
+  MAP_THREE_ISLAND  (group=3, num=14)  <- WEATHER_ID_THREE_ISLAND
+  MAP_THREE_ISLAND_BERRY_FOREST  (group=1, num=109)  <- WEATHER_ID_THREE_ISLAND_BERRY_FOREST
+  MAP_THREE_ISLAND_BOND_BRIDGE  (group=3, num=48)  <- WEATHER_ID_THREE_ISLAND_BOND_BRIDGE
+
+Cluster S4:
+  MAP_FIVE_ISLAND_MEADOW  (group=3, num=56)  <- WEATHER_ID_FIVE_ISLAND_MEADOW
+  MAP_FIVE_ISLAND_RESORT_GORGEOUS  (group=3, num=54)  <- WEATHER_ID_FIVE_ISLAND_RESORT_GORGEOUS
+  MAP_FIVE_ISLAND_WATER_LABYRINTH  (group=3, num=55)  <- WEATHER_ID_FIVE_ISLAND_WATER_LABYRINTH
+
+Cluster S5:
+  MAP_BIRTH_ISLAND_EXTERIOR  (group=2, num=56)  <- WEATHER_ID_BIRTH_ISLAND_EXTERIOR
+  MAP_BIRTH_ISLAND_HARBOR  (group=2, num=58)  <- WEATHER_ID_BIRTH_ISLAND_HARBOR
+
+Cluster V0:
+  MAP_FOUR_ISLAND  (group=3, num=15)  <- WEATHER_ID_FOUR_ISLAND
+  MAP_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE  (group=1, num=110)  <- WEATHER_ID_FOUR_ISLAND_ICEFALL_CAVE_ENTRANCE
+
+Cluster V1:
+  MAP_FIVE_ISLAND  (group=3, num=16)  <- WEATHER_ID_FIVE_ISLAND
+  MAP_FIVE_ISLAND_MEMORIAL_PILLAR  (group=3, num=57)  <- WEATHER_ID_FIVE_ISLAND_MEMORIAL_PILLAR
+  MAP_FIVE_ISLAND_RESORT_GORGEOUS  (group=3, num=54)  <- WEATHER_ID_FIVE_ISLAND_RESORT_GORGEOUS
+
+Cluster V2:
+  MAP_SIX_ISLAND  (group=3, num=18)  <- WEATHER_ID_SIX_ISLAND
+  MAP_SIX_ISLAND_PATTERN_BUSH  (group=1, num=121)  <- WEATHER_ID_SIX_ISLAND_PATTERN_BUSH
+  MAP_SIX_ISLAND_RUIN_VALLEY  (group=3, num=61)  <- WEATHER_ID_SIX_ISLAND_RUIN_VALLEY
+
+Cluster V3:
+  MAP_SEVEN_ISLAND  (group=3, num=17)  <- WEATHER_ID_SEVEN_ISLAND
+  MAP_SEVEN_ISLAND_SEVAULT_CANYON  (group=3, num=64)  <- WEATHER_ID_SEVEN_ISLAND_SEVAULT_CANYON
+  MAP_SEVEN_ISLAND_TANOBY_RUINS  (group=3, num=65)  <- WEATHER_ID_SEVEN_ISLAND_TANOBY_RUINS
+
+Cluster V4:
+  MAP_SEVEN_ISLAND_TRAINER_TOWER  (group=3, num=62)  <- WEATHER_ID_SEVEN_ISLAND_TRAINER_TOWER
+
+Cluster V5:
+  MAP_NAVEL_ROCK_EXTERIOR  (group=2, num=0)  <- WEATHER_ID_NAVEL_ROCK_EXTERIOR
+  MAP_NAVEL_ROCK_HARBOR  (group=2, num=59)  <- WEATHER_ID_NAVEL_ROCK_HARBOR
+  MAP_NAVEL_ROCK_SUMMIT  (group=2, num=37)  <- WEATHER_ID_NAVEL_ROCK_SUMMIT
+
+Cluster X0:
+  MAP_BURNEDTOWER_1F  (group=44, num=10)  <- WEATHER_ID_BURNEDTOWER_1F
+  MAP_ECRUTEAKCITY  (group=43, num=5)  <- WEATHER_ID_ECRUTEAKCITY
+  MAP_ROUTE42  (group=43, num=27)  <- WEATHER_ID_ROUTE42
+
+Cluster X1:
+  MAP_PEACHWOODTOWN  (group=43, num=36)  <- WEATHER_ID_PEACHWOODTOWN
+
+Cluster X2:
+  MAP_ROUTE38  (group=43, num=23)  <- WEATHER_ID_ROUTE38
+  MAP_ROUTE39  (group=43, num=24)  <- WEATHER_ID_ROUTE39
+
+Cluster X3:
+  MAP_OLIVINECITY  (group=43, num=6)  <- WEATHER_ID_OLIVINECITY
+  MAP_ROUTE40  (group=43, num=25)  <- WEATHER_ID_ROUTE40
+
+Cluster X4:
+  MAP_CIANWOODCITY  (group=43, num=7)  <- WEATHER_ID_CIANWOODCITY
+  MAP_CIANWOOD_GYM  (group=45, num=39)  <- WEATHER_ID_CIANWOOD_GYM
+  MAP_ROUTE41  (group=43, num=26)  <- WEATHER_ID_ROUTE41
+
+Cluster X5:
+  MAP_ROUTE47  (group=43, num=32)  <- WEATHER_ID_ROUTE47
+  MAP_ROUTE48  (group=43, num=33)  <- WEATHER_ID_ROUTE48
+
+Cluster X6:
+  MAP_ROUTE49  (group=43, num=34)  <- WEATHER_ID_ROUTE49
+
+Cluster X7:
+  MAP_OBSIDIANCITY  (group=43, num=37)  <- WEATHER_ID_OBSIDIANCITY
+  MAP_ROUTE50  (group=43, num=35)  <- WEATHER_ID_ROUTE50
+
+Cluster X8:
+  MAP_BLEAKRESTCOVE_ENTRANCE  (group=44, num=61)  <- WEATHER_ID_BLEAKRESTCOVE_ENTRANCE
+
+Cluster Y0:
+  MAP_MT_SILVER_SUMMIT  (group=44, num=38)  <- WEATHER_ID_MT_SILVER_SUMMIT
+  MAP_ROUTE28  (group=43, num=13)  <- WEATHER_ID_ROUTE28
+
+Cluster Y1:
+  MAP_ICEPATH_1F  (group=44, num=39)  <- WEATHER_ID_ICEPATH_1F
+  MAP_ICEPATH_B1F  (group=44, num=40)  <- WEATHER_ID_ICEPATH_B1F
+  MAP_ICEPATH_B2F  (group=44, num=41)  <- WEATHER_ID_ICEPATH_B2F
+  MAP_ICEPATH_B3F  (group=44, num=42)  <- WEATHER_ID_ICEPATH_B3F
+
+Cluster Y2:
+  MAP_MAHOGANYTOWN  (group=43, num=8)  <- WEATHER_ID_MAHOGANYTOWN
+  MAP_ROUTE44  (group=43, num=29)  <- WEATHER_ID_ROUTE44
+
+Cluster Y3:
+  MAP_LAKEOFRAGE  (group=43, num=10)  <- WEATHER_ID_LAKEOFRAGE
+  MAP_ROUTE43  (group=43, num=28)  <- WEATHER_ID_ROUTE43
+
+Cluster Y4:
+  MAP_BLACKTHORNCITY  (group=43, num=9)  <- WEATHER_ID_BLACKTHORNCITY
+  MAP_BLACKTHORN_GYM  (group=45, num=49)  <- WEATHER_ID_BLACKTHORN_GYM
+
+Cluster Y5:
+  MAP_ROUTE45  (group=43, num=30)  <- WEATHER_ID_ROUTE45
+
+Cluster Z0:
+  MAP_NEWBARKTOWN  (group=43, num=0)  <- WEATHER_ID_NEWBARKTOWN
+  MAP_ROUTE29  (group=43, num=14)  <- WEATHER_ID_ROUTE29
+
+Cluster Z1:
+  MAP_ROUTE31  (group=43, num=16)  <- WEATHER_ID_ROUTE31
+  MAP_VIOLETCITY  (group=43, num=2)  <- WEATHER_ID_VIOLETCITY
+
+Cluster Z2:
+  MAP_ROUTE32  (group=43, num=17)  <- WEATHER_ID_ROUTE32
+
+Cluster Z3:
+  MAP_AZALEATOWN  (group=43, num=3)  <- WEATHER_ID_AZALEATOWN
+  MAP_ROUTE33  (group=43, num=18)  <- WEATHER_ID_ROUTE33
+
+Cluster Z4:
+  MAP_ILEXFOREST  (group=44, num=9)  <- WEATHER_ID_ILEXFOREST
+
+Cluster Z5:
+  MAP_GOLDENRODCITY  (group=43, num=4)  <- WEATHER_ID_GOLDENRODCITY
+  MAP_ROUTE34  (group=43, num=19)  <- WEATHER_ID_ROUTE34
+
+Cluster Z6:
+  MAP_NATIONAL_PARK  (group=43, num=11)  <- WEATHER_ID_NATIONAL_PARK
+  MAP_NATIONAL_PARK_BUG_CONTEST  (group=43, num=12)  <- WEATHER_ID_NATIONAL_PARK_BUG_CONTEST
+  MAP_ROUTE35  (group=43, num=20)  <- WEATHER_ID_ROUTE35
+  MAP_ROUTE36  (group=43, num=21)  <- WEATHER_ID_ROUTE36
+  MAP_ROUTE37  (group=43, num=22)  <- WEATHER_ID_ROUTE37
+
+Cluster Z7:
+  MAP_RUINSOFALPH_ENTRANCE  (group=44, num=47)  <- WEATHER_ID_RUINSOFALPH_ENTRANCE
+
+Cluster Z8:
+  MAP_ROUTE46  (group=43, num=31)  <- WEATHER_ID_ROUTE46
+
+Cluster Z9:
+  MAP_CHERRYGROVE_CITY  (group=43, num=1)  <- WEATHER_ID_CHERRYGROVE_CITY
+  MAP_ROUTE30  (group=43, num=15)  <- WEATHER_ID_ROUTE30
+
+
+Warnings:
+---------
+- /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc:160: duplicate WEATHER_ID macro WEATHER_ID_FIVE_ISLAND_RESORT_GORGEOUS
+- /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc:160: duplicate map entry for MAP_FIVE_ISLAND_RESORT_GORGEOUS
+- MAP_POKEMON_TOWER (from WEATHER_ID_POKEMON_TOWER) does not exist in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h
+- MAP_AZALEA_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_AZALEA_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_AZALEA_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_AZALEA_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_AZALEA_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_BATTLE_COLOSSEUM_2P exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_BATTLE_COLOSSEUM_4P exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_BLACKTHORN_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_BLACKTHORN_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_BLACKTHORN_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_BLACKTHORN_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_BLEAKRESTCOVE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_BLEAKRESTCOVE_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_BLEAKRESTCOVE_DEEPCHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_BURNEDTOWER_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_CONDOMINIUMS_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_CONDOMINIUMS_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_CONDOMINIUMS_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_CONDOMINIUMS_ROOF exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_CONDOMINIUMS_ROOF_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_DEPARTMENT_STORE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_DEPARTMENT_STORE_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_DEPARTMENT_STORE_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_DEPARTMENT_STORE_4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_DEPARTMENT_STORE_5F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_DEPARTMENT_STORE_ELEVATOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_DEPARTMENT_STORE_ROOF exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_GAME_CORNER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_GAME_CORNER_PRIZE_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_HOTEL exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CELADON_CITY_RESTAURANT exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CAVE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CAVE_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CAVE_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CITY_BIKE_SHOP exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CITY_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CITY_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CITY_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CITY_HOUSE3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CITY_HOUSE4 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CITY_HOUSE5 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CITY_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CITY_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CERULEAN_CITY_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CHERRYGROVE_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CHERRYGROVE_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CHERRYGROVE_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CHERRYGROVE_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CIANWOOD_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CIANWOOD_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CIANWOOD_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CIANWOOD_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CINNABAR_ISLAND_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CINNABAR_ISLAND_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CINNABAR_ISLAND_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CINNABAR_ISLAND_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CINNABAR_ISLAND_POKEMON_LAB_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CINNABAR_ISLAND_POKEMON_LAB_EXPERIMENT_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CINNABAR_ISLAND_POKEMON_LAB_LOUNGE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_CINNABAR_ISLAND_POKEMON_LAB_RESEARCH_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_DARKCAVE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_DARKCAVE_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_DARKCAVE_BLACKTHORNENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_DARKCAVE_VIOLETENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_DIGLETTS_CAVE_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_DIGLETTS_CAVE_NORTH_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ECRUTEAK_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ECRUTEAK_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ECRUTEAK_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ECRUTEAK_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ECRUTEAK_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_HARBOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM10 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM11 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM12 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM13 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM14 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM4 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM5 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM6 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM7 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM8 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_LOST_CAVE_ROOM9 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_RESORT_GORGEOUS_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FIVE_ISLAND_ROCKET_WAREHOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_HARBOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_ICEFALL_CAVE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_ICEFALL_CAVE_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_ICEFALL_CAVE_BACK exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_LORELEIS_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FOUR_ISLAND_POKEMON_DAY_CARE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FUCHSIA_CITY_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FUCHSIA_CITY_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FUCHSIA_CITY_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FUCHSIA_CITY_HOUSE3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FUCHSIA_CITY_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FUCHSIA_CITY_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FUCHSIA_CITY_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FUCHSIA_CITY_SAFARI_ZONE_OFFICE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_FUCHSIA_CITY_WARDENS_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENRODDEPTSTORE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENRODDEPTSTORE_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENRODDEPTSTORE_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENRODDEPTSTORE_4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENRODDEPTSTORE_5F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENRODDEPTSTORE_6F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENROD_GAMECORNER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENROD_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENROD_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENROD_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENROD_HOUSE3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_GOLDENROD_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_INDIGO_PLATEAU_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_INDIGO_PLATEAU_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_LAKEOFRAGE_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_LAKEOFRAGE_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_LAVENDER_TOWN_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_LAVENDER_TOWN_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_LAVENDER_TOWN_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_LAVENDER_TOWN_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_LAVENDER_TOWN_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_LAVENDER_TOWN_VOLUNTEER_POKEMON_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MAHOGANY_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MAHOGANY_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MAHOGANY_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MAHOGANY_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MAHOGANY_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MTMORTAR_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MTMORTAR_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MTMORTAR_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_RUBY_PATH_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_RUBY_PATH_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_RUBY_PATH_B1F_STAIRS exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_RUBY_PATH_B2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_RUBY_PATH_B2F_STAIRS exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_RUBY_PATH_B3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_RUBY_PATH_B4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_RUBY_PATH_B5F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_SUMMIT exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_SUMMIT_PATH_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_SUMMIT_PATH_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_EMBER_SUMMIT_PATH_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_MOON_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_MOON_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_MOON_B2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_SILVER_CAVE1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_SILVER_CAVE2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_SILVER_CAVE3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_SILVER_NEW_ROOM1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_SILVER_NEW_ROOM2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_SILVER_NEW_ROOM3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_SILVER_NEW_ROOM4 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_MT_SILVER_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NATIONAL_PARK_GATE_NORTH exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NATIONAL_PARK_GATE_SOUTH exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B10F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B11F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B5F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B6F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B7F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B8F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_BASE_PATH_B9F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_FORK exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_SUMMIT_PATH_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_SUMMIT_PATH_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_SUMMIT_PATH_4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NAVEL_ROCK_SUMMIT_PATH_5F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NEWBARK_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NEWBARK_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_NEWBARK_LAB exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OBSIDIANCITY_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OBSIDIANCITY_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OBSIDIANCITY_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OBSIDIANCITY_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OBSIDIANCITY_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OBSIDIANTUNNEL_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OBSIDIANTUNNEL_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OBSIDIANTUNNEL_B2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OBSIDIANTUNNEL_CORE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OLIVINE_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OLIVINE_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OLIVINE_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OLIVINE_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_OLIVINE_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ONE_ISLAND_HARBOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ONE_ISLAND_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ONE_ISLAND_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ONE_ISLAND_KINDLE_ROAD_EMBER_SPA exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ONE_ISLAND_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ONE_ISLAND_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PALLET_TOWN_PLAYERS_HOUSE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PALLET_TOWN_PLAYERS_HOUSE_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PALLET_TOWN_PROFESSOR_OAKS_LAB exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PALLET_TOWN_RIVALS_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEACHWOODTOWN_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEACHWOODTOWN_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEACHWOODTOWN_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEACHWOODTOWN_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEACHWOODTOWN_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEWTER_CITY_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEWTER_CITY_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEWTER_CITY_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEWTER_CITY_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEWTER_CITY_MUSEUM_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEWTER_CITY_MUSEUM_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEWTER_CITY_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PEWTER_CITY_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_LEAGUE_AGATHAS_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_LEAGUE_BRUNOS_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_LEAGUE_CHAMPIONS_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_LEAGUE_HALL_OF_FAME exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_LEAGUE_LANCES_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_LEAGUE_LORELEIS_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_MANSION_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_MANSION_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_MANSION_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_MANSION_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_TOWER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_TOWER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_TOWER_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_TOWER_4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_TOWER_5F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_TOWER_6F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_POKEMON_TOWER_7F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PROTOTYPE_SEVII_ISLE_6 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PROTOTYPE_SEVII_ISLE_7 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PROTOTYPE_SEVII_ISLE_8 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_PROTOTYPE_SEVII_ISLE_9 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_RECORD_CORNER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROCKET_HIDEOUT_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROCKET_HIDEOUT_B2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROCKET_HIDEOUT_B3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROCKET_HIDEOUT_B4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROCKET_HIDEOUT_ELEVATOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROCK_TUNNEL_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE10_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE10_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE11_EAST_ENTRANCE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE11_EAST_ENTRANCE_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE12_FISHING_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE12_NORTH_ENTRANCE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE12_NORTH_ENTRANCE_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE15_WEST_ENTRANCE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE15_WEST_ENTRANCE_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE16_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE16_NORTH_ENTRANCE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE16_NORTH_ENTRANCE_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE18_EAST_ENTRANCE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE18_EAST_ENTRANCE_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE19_UNUSED_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE22_NORTH_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE23_UNUSED_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE25_SEA_COTTAGE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE2_EAST_BUILDING exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE2_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE34_DAYCARE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE46_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE4_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE4_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE5_POKEMON_DAY_CARE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE5_SOUTH_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE6_NORTH_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE6_UNUSED_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE7_EAST_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_ROUTE8_WEST_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_RUINSOFALPH_AERODACTYLCHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_RUINSOFALPH_HOOHCHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_RUINSOFALPH_INNERCHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_RUINSOFALPH_ITEMROOM1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_RUINSOFALPH_ITEMROOM2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_RUINSOFALPH_ITEMROOM3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_RUINSOFALPH_ITEMROOM4 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_RUINSOFALPH_KABUTOCHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_RUINSOFALPH_OMANYTECHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFARI_ZONE_CENTER_REST_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFARI_ZONE_EAST_REST_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFARI_ZONE_NORTH_REST_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFARI_ZONE_SECRET_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFARI_ZONE_WEST_REST_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_CONNECTION exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_COPYCATS_HOUSE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_COPYCATS_HOUSE_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_DOJO exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_MR_PSYCHICS_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SAFFRON_CITY_POKEMON_TRAINER_FAN_CLUB exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEAFOAM_ISLANDS_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEAFOAM_ISLANDS_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEAFOAM_ISLANDS_B2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEAFOAM_ISLANDS_B3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEAFOAM_ISLANDS_B4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_HARBOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_HOUSE_ROOM1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_HOUSE_ROOM2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_SEVAULT_CANYON_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_SEVAULT_CANYON_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_SEVAULT_CANYON_TANOBY_KEY exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_TANOBY_RUINS_DILFORD_CHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_TANOBY_RUINS_LIPTOO_CHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_TANOBY_RUINS_RIXY_CHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_TANOBY_RUINS_SCUFIB_CHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_TANOBY_RUINS_VIAPOIS_CHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_TANOBY_RUINS_WEEPTH_CHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SEVEN_ISLAND_UNUSED_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_10F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_11F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_5F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_6F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_7F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_8F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_9F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SILPH_CO_ELEVATOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_ALTERING_CAVE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_DOTTED_HOLE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_DOTTED_HOLE_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_DOTTED_HOLE_B2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_DOTTED_HOLE_B3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_DOTTED_HOLE_B4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_DOTTED_HOLE_SAPPHIRE_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_GREEN_PATH exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_HARBOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_OUTCAST_ISLAND exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_WATER_PATH exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_WATER_PATH_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SIX_ISLAND_WATER_PATH_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SLOWPOKEWELL_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SLOWPOKEWELL_B2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SPROUTTOWER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SPROUTTOWER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SPROUTTOWER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SPROUTTOWER_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_1F_CORRIDOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_1F_ROOM1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_1F_ROOM2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_1F_ROOM3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_1F_ROOM4 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_1F_ROOM5 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_1F_ROOM6 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_1F_ROOM7 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_2F_CORRIDOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_2F_ROOM1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_2F_ROOM2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_2F_ROOM3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_2F_ROOM4 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_2F_ROOM5 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_2F_ROOM6 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_3F_CORRIDOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_B1F_CORRIDOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_B1F_ROOM1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_B1F_ROOM2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_B1F_ROOM3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_B1F_ROOM4 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_B1F_ROOM5 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_CAPTAINS_OFFICE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_DECK exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_EXTERIOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_SSANNE_KITCHEN exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_DUNSPARCE_TUNNEL exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_HARBOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_HOUSE3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_HOUSE4 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_HOUSE5 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_THREE_ISLAND_PORT exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TINTOWER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TINTOWER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TINTOWER_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TINTOWER_4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TINTOWER_5F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TINTOWER_6F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TINTOWER_7F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TINTOWER_8F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TINTOWER_9F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRADE_CENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_4F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_5F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_6F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_7F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_8F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_ELEVATOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_LOBBY exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TRAINER_TOWER_ROOF exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TWO_ISLAND_CAPE_BRINK_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TWO_ISLAND_HARBOR exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TWO_ISLAND_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TWO_ISLAND_JOYFUL_GAME_CORNER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TWO_ISLAND_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_TWO_ISLAND_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_UNDERGROUND_PATH_EAST_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_UNDERGROUND_PATH_EAST_WEST_TUNNEL exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_UNDERGROUND_PATH_NORTH_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_UNDERGROUND_PATH_NORTH_SOUTH_TUNNEL exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_UNDERGROUND_PATH_SOUTH_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_UNDERGROUND_PATH_WEST_ENTRANCE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_UNIONCAVE_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_UNIONCAVE_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_UNIONCAVE_B2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_UNION_ROOM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VERMILION_CITY_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VERMILION_CITY_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VERMILION_CITY_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VERMILION_CITY_HOUSE3 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VERMILION_CITY_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VERMILION_CITY_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VERMILION_CITY_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VERMILION_CITY_POKEMON_FAN_CLUB exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VICTORY_ROAD_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VICTORY_ROAD_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VICTORY_ROAD_3F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIOLET_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIOLET_HOUSE1 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIOLET_HOUSE2 exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIOLET_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIOLET_POKECENTER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIRIDIAN_CITY_GYM exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIRIDIAN_CITY_HOUSE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIRIDIAN_CITY_MART exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIRIDIAN_CITY_POKEMON_CENTER_1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIRIDIAN_CITY_POKEMON_CENTER_2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_VIRIDIAN_CITY_SCHOOL exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_WHIRLISLANDS_B1F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_WHIRLISLANDS_B2F exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_WHIRLISLANDS_LUGIACHAMBER exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_WHIRLISLANDS_NE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_WHIRLISLANDS_NW exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_WHIRLISLANDS_SE exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- MAP_WHIRLISLANDS_SW exists in /home/drake/pokeroms/pokefirered2/include/constants/map_groups.h but has no WEATHER_ID entry in /home/drake/pokeroms/pokefirered2/data/maps/weather/weather_ids.inc
+- Cluster C7 has a WeatherTable_C7 table but no maps assigned
+- Cluster C8 has a WeatherTable_C8 table but no maps assigned
+- Cluster V0 is used by maps but has no WeatherTable_V0 table defined
+- Cluster V1 is used by maps but has no WeatherTable_V1 table defined
+- Cluster V2 is used by maps but has no WeatherTable_V2 table defined
+- Cluster V3 is used by maps but has no WeatherTable_V3 table defined
+- Cluster V4 is used by maps but has no WeatherTable_V4 table defined
+- Cluster V5 is used by maps but has no WeatherTable_V5 table defined

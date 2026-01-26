@@ -1217,6 +1217,7 @@ static void Cmd_critcalc(void)
     gBattlescriptCurrInstr++;
 }
 
+
 static void Cmd_damagecalc(void)
 {
     u16 sideStatus = gSideStatuses[GET_BATTLER_SIDE(gBattlerTarget)];
@@ -1229,6 +1230,34 @@ static void Cmd_damagecalc(void)
         gBattleMoveDamage *= 2;
     if (gProtectStructs[gBattlerAttacker].helpingHand)
         gBattleMoveDamage = gBattleMoveDamage * 15 / 10;
+
+    // --- CUSTOM MYTHIC WEATHER DAMAGE RULES ---
+
+    // Heavy Rain (mythic rain)
+    if (gBattleWeather & B_WEATHER_RAIN_PERMANENT)
+    {
+        // Fire moves deal 0 damage
+        if (gBattleMoves[gCurrentMove].type == TYPE_FIRE)
+            gBattleMoveDamage = 0;
+
+        // Water moves deal double damage
+        if (gBattleMoves[gCurrentMove].type == TYPE_WATER)
+            gBattleMoveDamage *= 2;
+    }
+
+    // Extreme Sun (mythic sun)
+    if (gBattleWeather & B_WEATHER_SUN_PERMANENT)
+    {
+        // Water moves deal 0 damage
+        if (gBattleMoves[gCurrentMove].type == TYPE_WATER)
+            gBattleMoveDamage = 0;
+
+        // Fire moves deal double damage
+        if (gBattleMoves[gCurrentMove].type == TYPE_FIRE)
+            gBattleMoveDamage *= 2;
+    }
+
+    // --- END CUSTOM ---
 
     gBattlescriptCurrInstr++;
 }
@@ -2797,6 +2826,36 @@ static void Cmd_seteffectwithchance(void)
         gBattleCommunication[MOVE_EFFECT_BYTE] &= ~MOVE_EFFECT_CERTAIN;
         SetMoveEffect(FALSE, MOVE_EFFECT_CERTAIN);
     }
+
+// --- CUSTOM MYTHIC WEATHER EFFECTS ---
+
+// Thunder always paralyzes in Heavy Rain (mythic rain)
+if ((gBattleWeather & B_WEATHER_RAIN_PERMANENT)
+    && gBattleMoves[gCurrentMove].effect == EFFECT_THUNDER
+    && gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_PARALYSIS
+    && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
+{
+    SetMoveEffect(FALSE, MOVE_EFFECT_CERTAIN);
+    gBattleCommunication[MOVE_EFFECT_BYTE] = 0;
+    gBattleScripting.multihitMoveEffect = 0;
+    return;
+}
+
+// Solar Beam always burns in Extreme Sun (mythic sun)
+if ((gBattleWeather & B_WEATHER_SUN_PERMANENT)
+    && gBattleMoves[gCurrentMove].effect == EFFECT_SOLAR_BEAM
+    && gBattleCommunication[MOVE_EFFECT_BYTE] == MOVE_EFFECT_BURN
+    && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))
+{
+    SetMoveEffect(FALSE, MOVE_EFFECT_CERTAIN);
+    gBattleCommunication[MOVE_EFFECT_BYTE] = 0;
+    gBattleScripting.multihitMoveEffect = 0;
+    return;
+}
+
+// --- END CUSTOM ---
+
+
     else if (Random() % 100 <= percentChance
              && gBattleCommunication[MOVE_EFFECT_BYTE]
              && !(gMoveResultFlags & MOVE_RESULT_NO_EFFECT))

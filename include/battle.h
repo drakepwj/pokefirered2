@@ -726,5 +726,11 @@ extern u8 gChosenActionByBattler[MAX_BATTLERS_COUNT];
 extern u8 gBattleTerrain;
 extern struct MultiBattlePokemonTx gMultiPartnerParty[3];
 extern u16 gRandomTurnNumber;
+extern const u8 BattleScript_RainContinuesOrEnds[];
+extern const u8 BattleScript_SunlightContinues[];
+extern const u8 BattleScript_DamagingWeatherContinues[];
+extern const u8 BattleScript_FogAccuracyMessage[];
+
+
 
 #endif // GUARD_BATTLE_H

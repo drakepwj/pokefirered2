@@ -2153,7 +2153,6 @@ void DoPokemonLeagueLightingEffect(void)
             LoadPalette(sEliteFourLightingPalettes[0], BG_PLTT_ID(7), PLTT_SIZE_4BPP);
         }
         data[1] = 0;
-        ApplyGlobalTintToPaletteSlot(7, 1);
     }
 }
 
@@ -2180,7 +2179,6 @@ static void Task_RunPokemonLeagueLightingEffect(u8 taskId)
             data[0] = sEliteFourLightingTimers[data[1]];
             LoadPalette(sEliteFourLightingPalettes[data[1]], BG_PLTT_ID(7), PLTT_SIZE_4BPP);
         }
-        ApplyGlobalTintToPaletteSlot(7, 1);
     }
 }
 
@@ -2193,7 +2191,6 @@ static void Task_CancelPokemonLeagueLightingEffect(u8 taskId)
             LoadPalette(sChampionRoomLightingPalettes[8], BG_PLTT_ID(7), PLTT_SIZE_4BPP);
         else
             LoadPalette(sEliteFourLightingPalettes[11], BG_PLTT_ID(7), PLTT_SIZE_4BPP);
-        ApplyGlobalTintToPaletteSlot(7, 1);
         if (gPaletteFade.active)
         {
             BlendPalettes(0x00000080, 16, RGB_BLACK);
